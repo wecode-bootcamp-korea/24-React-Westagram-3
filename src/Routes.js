@@ -1,21 +1,21 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Euiseon's 컴포넌트
-import LoginEuiseon from "./pages/euiseon/Login/Login";
-import MainEuiseon from "./pages/euiseon/Main/Main";
+import LoginEuiseon from './pages/euiseon/Login/Login';
+import MainEuiseon from './pages/euiseon/Main/Main';
 
 // Jiyoung's 컴포넌트
-import LoginJiyoung from "./pages/jiyoung/Login/Login";
-import MainJiyoung from "./pages/jiyoung/Main/Main";
+import LoginJiyoung from './pages/jiyoung/Login/Login';
+import MainJiyoung from './pages/jiyoung/Main/Main';
 
 // sejun's 컴포넌트
-import LoginSejun from "./pages/sejun/Login/Login";
-import MainSejun from "./pages/sejun/Main/Main";
+import LoginSejun from './pages/sejun/Login/Login';
+import MainSejun from './pages/sejun/Main/Main';
 
 //youngho's 컴포넌트
-import LoginYoungho from "./pages/youngho/Login/Login";
-import MainYoungho from "./pages/youngho/Main/Main";
+import LoginYoungho from './pages/youngho/Login/Login';
+import MainYoungho from './pages/youngho/Main/Main';
 
 class Routes extends React.Component {
   render() {

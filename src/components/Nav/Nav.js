@@ -1,13 +1,13 @@
 import React from 'react';
 
-class Main extends React.Component {
+class Nav extends React.Component {
   render() {
     return (
       <div>
-        <h3>메인</h3>
+        <h3>네브임</h3>
       </div>
     );
   }
 }
 
-export default Main;
+export default Nav;
