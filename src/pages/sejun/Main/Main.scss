@@ -1,0 +1,292 @@
+/* Main */
+section {
+  display: flex;
+  justify-content: space-between;
+  width: 975px;
+  margin: auto;
+  main {
+    width: 600px;
+  }
+}
+
+.stories {
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: white;
+  width: 100%;
+  height: 70px;
+  padding: 15px 0;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 10px;
+  .story {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-left: 35px;
+  }
+}
+
+article {
+  width: 100%;
+  .articleWrapper {
+    margin: 30px 0;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    .articleHeader {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 20px;
+      .articleAuthor {
+        display: table;
+        align-self: center;
+        .authorId {
+          line-height: 35px;
+          padding-left: 30px;
+        }
+        img {
+          width: 35px;
+          height: 35px;
+          border-radius: 35px;
+        }
+      }
+      .dot {
+        line-height: 35px;
+      }
+    }
+    .article img {
+      width: 600px;
+      height: 600px;
+    }
+  }
+}
+
+/* aside */
+aside {
+  width: 350px;
+  height: 100vh;
+  top: 0;
+}
+
+.asideContent {
+  width: 350px;
+  height: 50px;
+  padding-top: 80px;
+  position: fixed;
+}
+
+.sideHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  align-items: center;
+}
+
+.sideHeaderId {
+  display: flex;
+  flex-direction: column;
+  padding-right: 100px;
+}
+
+.sideHeader img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.sideHeaderTrans {
+  font-size: 15px;
+  color: blue;
+}
+
+.asideStories {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.recommends {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.rcmdUser {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.rcmdUserId {
+  display: flex;
+  flex-direction: column;
+}
+
+.rcmdUser img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.follow {
+  color: blue;
+}
+
+.sideFooter {
+  padding: 30px 20px;
+  font-size: 15px;
+  color: rgb(142, 142, 142);
+}
+
+.sideFooter a {
+  color: rgb(142, 142, 142);
+  text-decoration: none;
+}
+.copyright {
+  line-height: 5;
+  font-size: 15px;
+}
+
+/* comment */
+.comments {
+  padding: 10px 10px;
+  .commentEmojis {
+    display: flex;
+    justify-content: space-between;
+    svg {
+      padding: 5px 5px;
+    }
+  }
+  .likes {
+    display: inline-block;
+    margin: 5px 0;
+    font-size: 15px;
+  }
+  .comment {
+    padding: 3px 0;
+    line-height: 1.2;
+    .commentId {
+      font-weight: 800;
+    }
+    .commentContent {
+      padding-left: 5px;
+    }
+    .more {
+      font-size: 15px;
+      color: rgb(142, 142, 142);
+    }
+    .likeBtn {
+      border: none;
+      background-color: white;
+      float: right;
+      line-height: 1.5;
+    }
+  }
+  .hours {
+    font-size: 15px;
+    margin: 5px 0;
+    color: #dbdbdb;
+  }
+  .commentInput {
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  svg {
+    padding-right: 10px;
+  }
+  .commentArea {
+    width: 80%;
+    height: 100%;
+    font-size: 18px;
+    border: none;
+  }
+  .commentArea:focus {
+    outline: none;
+  }
+  .enrtry {
+    width: 50px;
+  }
+}
+
+.search {
+  display: none;
+  .rectangle {
+    position: absolute;
+    display: inline-block;
+    width: 15px;
+    height: 20px;
+    top: 52px;
+    left: 50%;
+    transform: rotate(40deg);
+    background-color: white;
+    box-shadow: 0px 0px 19px 0px #000000;
+    z-index: 1;
+  }
+  .whiteBorder {
+    position: absolute;
+    width: 350px;
+    height: 300px;
+    margin: 0 auto;
+    top: 60px;
+    right: 0;
+    left: 0;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 19px 0px #000000;
+    z-index: 0;
+  }
+  .searchList {
+    position: absolute;
+    width: 350px;
+    margin: 0 auto;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 2;
+    .listHeader {
+      padding: 20px 20px;
+      .recentRecords {
+        font-size: 18px;
+        font-weight: 600;
+        color: black;
+      }
+      .delAll {
+        font-size: 15px;
+        color: #0095f6;
+        float: right;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.searched {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+  .searchedImg {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #dbdbdb;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.7;
+    font-weight: 100;
+  }
+  .keyword {
+    position: absolute;
+    left: 80px;
+    line-height: 3;
+    font-weight: 500;
+  }
+  .listDel {
+    font-size: 20px;
+    color: grey;
+    line-height: 2.5;
+  }
+}

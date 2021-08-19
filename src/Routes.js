@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Nav from './components/Nav/Nav';
 
 // Euiseon's 컴포넌트
 import LoginEuiseon from './pages/euiseon/Login/Login';
@@ -21,7 +22,7 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
-        {/* <Nav /> */}
+        <Nav />
         <Switch>
           <Route exact path="/login-euiseon" component={LoginEuiseon} />
           <Route exact path="/main-euiseon" component={MainEuiseon} />
