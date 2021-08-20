@@ -5,7 +5,39 @@ import Nav from '../../../components/Nav/Nav';
 import './Main.scss';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comments: [],
+      commentContent: '',
+    };
+  }
+
+  addComment = () => {
+    let _comments = this.state.comments;
+    _comments.push(this.state.commentContent);
+    this.setState({
+      comments: _comments,
+      commentContent: '',
+    });
+  };
+
+  onChange = e => {
+    this.setState({
+      commentContent: e.target.value,
+    });
+  };
+
+  commentEnterPress = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      this.addComment();
+    }
+  };
+
   render() {
+    const { comments, commentContent } = this.state;
+    const { commentEnterPress, onChange, addComment } = this;
     return (
       <div>
         <Nav />
@@ -51,10 +83,10 @@ class Main extends React.Component {
                 </div>
                 <div className="comment">
                   <div>
-                    <span className="boldFont">bbangho</span> 한강 다녀감~✌️
+                    <span className="boldFont">bbangho</span>한강 다녀감~✌️
                   </div>
                   <div>
-                    <span className="boldFont">manja</span> 한강 갱~ 🔫 🔫
+                    <span className="boldFont">manja</span>한강 갱~ 🔫 🔫
                     <img
                       className="commentDelete"
                       alt="댓글 삭제"
@@ -68,17 +100,39 @@ class Main extends React.Component {
                     <div>42분 전</div>
                   </div>
                 </div>
+                {comments.map(comment => {
+                  return (
+                    <div className="comment">
+                      <span className="boldFont">bbangho</span>
+                      {comment}
+                      <img
+                        className="commentDelete"
+                        alt="댓글 삭제"
+                        src="/images/youngho/garbage.png"
+                      />
+                      <img
+                        className="commentHeart"
+                        alt="댓글 하트"
+                        src="/images/youngho/heart.png"
+                      />
+                    </div>
+                  );
+                })}
               </div>
               <form className="addCommentFrom">
                 <input
                   className="writeComment"
                   type="text"
                   placeholder="댓글 달기..."
+                  onKeyPress={commentEnterPress}
+                  onChange={onChange}
+                  value={commentContent}
                 />
                 <input
                   className="postingButton"
                   type="button"
                   defaultValue="게시"
+                  onClick={addComment}
                 />
               </form>
             </article>
