@@ -1,31 +1,63 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 
-import './Login.css';
+import './Login.scss';
 
 class Login extends React.Component {
-  goToMain = () => {
-    this.props.history.push('/main');
+  constructor() {
+    super();
+    this.state = {
+      loginId: '',
+      loginPassword: '',
+    };
+  }
+
+  handleIdInput = e => {
+    this.setState({
+      loginId: e.target.value,
+    });
   };
+
+  handlePasswordInput = e => {
+    this.setState({
+      loginPassword: e.target.value,
+    });
+  };
+
   render() {
+    const { checkIdPassword, handleIdInput, handlePasswordInput } = this;
+    const { loginId, loginPassword } = this.state;
     return (
       <div>
         <div className="container">
           <header className="header">Westagram</header>
-          <form className="loginForm">
+          <form className="loginForm" onKeyUp={checkIdPassword}>
             <input
               id="id"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
+              onChange={handleIdInput}
             />
-            <input id="password" type="password" placeholder="비밀번호" />
-            {/* <Link to="/main">
-              <button id="loginButton">로그인</button>
-            </Link> */}
-            <button id="loginButton" onClick={this.goToMain}>
-              로그인
-            </button>
+            <input
+              id="password"
+              type="password"
+              placeholder="비밀번호"
+              onChange={handlePasswordInput}
+            />
+            <Link to="/main">
+              <button
+                className={
+                  loginId.length &&
+                  loginPassword.length >= 5 &&
+                  loginId.includes('@')
+                    ? 'buttonActivate'
+                    : 'buttonDisabled'
+                }
+                id="loginButton"
+              >
+                로그인
+              </button>
+            </Link>
           </form>
           <a href="#!" className="findPassword">
             비밀번호를 잊으셨나요?
@@ -36,5 +68,4 @@ class Login extends React.Component {
   }
 }
 
-// export default Login;
-export default withRouter(Login);
+export default Login;

@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// Euiseon's 컴포넌트
-import LoginEuiseon from './pages/euiseon/Login/Login';
-import MainEuiseon from './pages/euiseon/Main/Main';
+// // Euiseon's 컴포넌트
+// import LoginEuiseon from './pages/euiseon/Login/Login';
+// import MainEuiseon from './pages/euiseon/Main/Main';
 
-// Jiyoung's 컴포넌트
-import LoginJiyoung from './pages/jiyoung/Login/Login';
-import MainJiyoung from './pages/jiyoung/Main/Main';
+// // Jiyoung's 컴포넌트
+// import LoginJiyoung from './pages/jiyoung/Login/Login';
+// import MainJiyoung from './pages/jiyoung/Main/Main';
 
-// sejun's 컴포넌트
-import LoginSejun from './pages/sejun/Login/Login';
-import MainSejun from './pages/sejun/Main/Main';
+// // sejun's 컴포넌트
+// import LoginSejun from './pages/sejun/Login/Login';
+// import MainSejun from './pages/sejun/Main/Main';
 
 //youngho's 컴포넌트
 import LoginYoungho from './pages/youngho/Login/Login';
@@ -22,7 +22,7 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/login-euiseon" component={LoginEuiseon} />
+          {/* <Route exact path="/login-euiseon" component={LoginEuiseon} />
           <Route exact path="/main-euiseon" component={MainEuiseon} />
 
           <Route exact path="/login-jiyoung" component={LoginJiyoung} />
@@ -32,7 +32,9 @@ class Routes extends React.Component {
           <Route exact path="/main-sejun" component={MainSejun} />
 
           <Route exact path="/login-youngho" component={LoginYoungho} />
-          <Route exact path="/main-youngho" component={MainYoungho} />
+          <Route exact path="/main-youngho" component={MainYoungho} /> */}
+          <Route exact path="/" component={LoginYoungho} />
+          <Route exact path="/main" component={MainYoungho} />
         </Switch>
       </Router>
     );
