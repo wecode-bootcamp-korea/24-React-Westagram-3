@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Comment from '../../../components/Comment/Comment';
 import Nav from '../../../components/Nav/Nav';
 
 import './Main.scss';
@@ -100,23 +101,8 @@ class Main extends React.Component {
                     <div>42분 전</div>
                   </div>
                 </div>
-                {comments.map(comment => {
-                  return (
-                    <div className="comment">
-                      <span className="boldFont">bbangho</span>
-                      {comment}
-                      <img
-                        className="commentDelete"
-                        alt="댓글 삭제"
-                        src="/images/youngho/garbage.png"
-                      />
-                      <img
-                        className="commentHeart"
-                        alt="댓글 하트"
-                        src="/images/youngho/heart.png"
-                      />
-                    </div>
-                  );
+                {comments.map((comment, i) => {
+                  return <Comment key={`comment${i}`} comment={comment} />;
                 })}
               </div>
               <form className="addCommentFrom">

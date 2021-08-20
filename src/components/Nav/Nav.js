@@ -3,11 +3,12 @@ import './Nav.scss';
 
 class Nav extends React.Component {
   render() {
+    const logoImg = './images/sejun/instagram.png';
     return (
       <nav className="nav">
         <div className="navBar">
           <div className="logo">
-            <img src="./images/youngho/icon.png" alt="" />
+            <img src={logoImg} alt="" />
             <sapn className="vertical"></sapn>
             <span>Westagram</span>
           </div>
@@ -78,7 +79,10 @@ class Nav extends React.Component {
             </a>
 
             <div className="myId">
-              <img alt="내 사진" src="/images/youngho/hanRiver.jpeg" />
+              <img
+                src="https://w7.pngwing.com/pngs/786/468/png-transparent-bart-simpson-holding-skateboard-bart-simpson-homer-simpson-lisa-simpson-marge-simpson-maggie-simpson-bart-simpson-springfield-cartoon-fictional-character.png"
+                alt=""
+              />
             </div>
           </div>
         </div>
