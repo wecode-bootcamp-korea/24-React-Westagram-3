@@ -1,0 +1,78 @@
+.wrap {
+  .container {
+    display: flex;
+    justify-content: center; /*space-evenly, space-around도 가운데로 정렬해줌*/
+    align-items: center;
+    height: 100%;
+    background: #dbdbdb;
+    .inner {
+      width: 400px;
+      height: 450px;
+      padding: 10px 40px;
+      box-sizing: border-box;
+      background: #fff;
+      border: 1px solid #dbdbdb;
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
+
+        .logo {
+          font-family: 'Lobster', cursive;
+          font-size: 50px;
+        }
+      }
+
+      .form {
+        margin: 30px 0;
+
+        .input-box {
+          width: 100%;
+          height: 45px;
+          margin-bottom: 100px;
+          #userID,
+          #userPW {
+            margin-bottom: 10px;
+            padding: 10px;
+
+            input {
+              width: 100%;
+              height: 100%;
+              box-sizing: border-box;
+              background: #fafafa;
+              border: 1px solid #dbdbdb;
+              border-radius: 4px;
+              font-size: 15px;
+            }
+          }
+        }
+        .button_box {
+          display: flex;
+          width: 100%;
+          height: 40px;
+
+          .btn {
+            width: 100%;
+            height: 100%;
+            background-color: #bfdffd;
+            border: 1px solid #bfdffd;
+            border-radius: 4px;
+          }
+
+          .btn span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+          }
+        }
+      }
+
+      .forgotPW {
+        display: flex;
+        justify-content: center; /* 얘는 왜 align-items: center; 안해줘도 센터로 오지? */
+        margin-top: 40px;
+      }
+    }
+  }
+}
