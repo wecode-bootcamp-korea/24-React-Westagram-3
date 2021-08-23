@@ -1,27 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
 
-/*class LoginEuiseon extends React.Component {
-  constructor() {
-    super();
-    this.state = { idInputValue: '', pwInputValue: '' }; //state를 여기다가 저장한다.
-  }
-  idInput = event => {
-    this.setState({
-      idInputValue: `${event.target.value}`,
-    });
-  }
-  pwInput = (event) => {
-    this.setState({
-      pwInputValue: `${event.target.value}`
-    })
-  }
-
-  render() {
-    return ();
-  }
-}*/
-
 class Login extends React.Component {
   constructor() {
     super();
@@ -34,7 +13,7 @@ class Login extends React.Component {
   handleIdInput = event => {
     this.setState({
       idInputValue: event.target.value,
-    });
+    }); //저장한 state를 여기서 이 함수가 실행 되면서 state의 값을 변경한다.
   };
 
   handlePwInput = event => {
@@ -78,7 +57,7 @@ class Login extends React.Component {
                       this.state.idInputValue.includes('@') &&
                       this.state.pwInputValue.length >= 5
                         ? 'changeButtonColor'
-                        : 'normalButtonColor'
+                        : 'ButtonColor'
                     }
                     type="button"
                     id="btn"
