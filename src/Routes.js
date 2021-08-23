@@ -19,6 +19,13 @@ import LoginYoungho from './pages/youngho/Login/Login';
 import MainYoungho from './pages/youngho/Main/Main';
 
 class Routes extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: 0,
+      pw: 0,
+    };
+  }
   render() {
     return (
       <Router>
