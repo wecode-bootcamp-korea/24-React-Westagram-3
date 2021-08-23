@@ -73,7 +73,22 @@ class Login extends React.Component {
                   />
                 </div>
                 <div className="button_box">
-                  <button type="button" className="btn" disabled="disabled">
+                  <button
+                    className={
+                      this.state.idInputValue.includes('@') &&
+                      this.state.pwInputValue.length >= 5
+                        ? 'changeButtonColor'
+                        : 'normalButtonColor'
+                    }
+                    type="button"
+                    id="btn"
+                    disabled={
+                      this.state.idInputValue.includes('@') &&
+                      this.state.pwInputValue.length >= 5
+                        ? false
+                        : true
+                    }
+                  >
                     <span>로그인</span>
                   </button>
                 </div>

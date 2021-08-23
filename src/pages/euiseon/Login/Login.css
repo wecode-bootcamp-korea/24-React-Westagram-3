@@ -68,15 +68,22 @@ input {
   height: 40px;
 }
 
-.btn {
+#btn {
   width: 100%;
   height: 100%;
-  background-color: #bfdffd;
-  border: 1px solid #bfdffd;
+  border: 1px solid;
   border-radius: 4px;
 }
 
-.btn span {
+.changeButtonColor {
+  background-color: #5ca7ee;
+}
+
+.normalButtonColor {
+  background-color: #b8daf9;
+}
+
+#btn span {
   font-size: 18px;
   font-weight: bold;
   color: #fff;
