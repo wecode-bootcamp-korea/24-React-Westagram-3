@@ -1,0 +1,49 @@
+.loginBoard {
+  width: 600px;
+  height: 80vh;
+  padding-top: 150px;
+  margin: 0 auto;
+  background-color: white;
+  .logo {
+    font-size: 80px;
+    display: block;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .loginTable {
+    border-radius: 5px;
+    input {
+      width: 350px;
+      display: block;
+      margin: 10px auto;
+      font-size: 20px;
+      line-height: 2.5;
+      background-color: #fafafa;
+      border: 1px solid #efefef;
+    }
+    input::placeholder {
+      color: #d2d2d2;
+    }
+    .loginBtn {
+      width: 350px;
+      display: block;
+      margin: 20px auto;
+      font-size: 25px;
+      padding: 8px 15px;
+      color: white;
+      background-color: #c4e1fb;
+      border: 1px solid #efefef;
+    }
+    .active {
+      background-color: #4390e7;
+    }
+  }
+}
+
+.forgetPw {
+  display: block;
+  margin-top: 150px;
+  text-align: center;
+  color: #003569;
+  font-weight: 600;
+}

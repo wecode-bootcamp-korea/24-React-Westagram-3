@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import './Login.scss';
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      idVal: '',
+      pwVal: '',
+    };
+  }
   render() {
     return (
       <div className="loginBoard">
@@ -12,7 +19,7 @@ class Login extends React.Component {
           <input
             onChange={function handleInput(e) {
               this.setState({
-                id: e.target.value,
+                idVal: e.target.value,
               });
               e.preventDefault();
             }.bind(this)}
@@ -23,7 +30,7 @@ class Login extends React.Component {
           <input
             onChange={function handleInput(e) {
               this.setState({
-                pw: e.target.value,
+                pwVal: e.target.value,
               });
               e.preventDefault();
             }.bind(this)}
@@ -31,8 +38,17 @@ class Login extends React.Component {
             placeholder="비밀번호"
             className="loginPw"
           />
+
           <Link to="/main-sejun" style={{ textDecoration: 'none' }}>
-            <button className="loginBtn">로그인</button>
+            <button
+              className={
+                this.state.idVal.includes('@') && this.state.pwVal.length >= 5
+                  ? 'loginBtn active'
+                  : 'loginBtn nonActive'
+              }
+            >
+              로그인
+            </button>
           </Link>
         </form>
 
