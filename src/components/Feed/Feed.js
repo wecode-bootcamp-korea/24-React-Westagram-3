@@ -5,9 +5,45 @@ import Comment from '../Comment/Comment';
 import './Feed.scss';
 
 class Feed extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: {},
+      commentInputValue: '',
+    };
+  }
+
+  addComment = () => {
+    const comment = this.props.data.comment;
+    const _comment = comment;
+    _comment.push({
+      id: _comment.length + 1,
+      content: this.state.commentInputValue,
+      isLiked: false,
+    });
+    this.setState({
+      comment: _comment,
+      // commentInputValue: '',
+    });
+  };
+
+  commentEnterPress = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      this.addComment();
+    }
+  };
+
+  onChange = e => {
+    const { value } = e.target;
+    this.setState({
+      commentInputValue: value,
+    });
+  };
+
   render() {
-    const { onKeyPress, onChange, value, onClick } = this.props;
-    const { alt, img, userName } = this.props.data;
+    const { commentEnterPress, onChange, commentInputValue, addComment } = this;
+    const { alt, img, userName, comment } = this.props.data;
     return (
       <div className="feed">
         <article>
@@ -37,13 +73,15 @@ class Feed extends React.Component {
               <span className="boldFont">manja</span>님
               <span className="boldFont">외 7명</span>이 좋아합니다
             </div>
-            {this.props.data.comment.map(comment => {
+            {comment.map(comment => {
               return (
                 <Comment
                   key={comment.id}
+                  id={comment.id}
                   userName={comment.userName}
                   comment={comment.content}
                   isLiked={comment.isLiked}
+                  delete_comment={this.delete_comment}
                 />
               );
             })}
@@ -53,15 +91,15 @@ class Feed extends React.Component {
               className="writeComment"
               type="text"
               placeholder="댓글 달기..."
-              onKeyPress={onKeyPress}
+              onKeyPress={commentEnterPress}
               onChange={onChange}
-              value={value}
+              value={commentInputValue}
             />
             <input
               className="postingButton"
               type="button"
               defaultValue="게시"
-              onClick={onClick}
+              onClick={addComment}
             />
           </form>
         </article>
