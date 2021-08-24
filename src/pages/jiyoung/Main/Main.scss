@@ -1,0 +1,287 @@
+:root {
+  --secondary-color: #8e8e8e;
+  --accent-color: #2a93fc;
+  --border-color: #ededed;
+  --background-color: #fafafa;
+  --content-background-color: #ffffff;
+}
+
+.MainJiyoung {
+  font-family: 'Hahmlet', serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  main {
+    display: flex;
+    justify-content: center;
+    padding: 60px 50px;
+    background-color: var(--background-color);
+    scroll-snap-type: y mandatory;
+    section {
+      article {
+        scroll-snap-align: center;
+        margin: 0 20px 20px 0;
+        background-color: var(--content-background-color);
+        border: 1px solid var(--border-color);
+        .feed-writer-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .feed-writer {
+            display: flex;
+            align-items: center;
+          }
+          .menu-btn {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+          }
+        }
+        .feed-img {
+          width: 450px;
+          height: 500px;
+          opacity: 1;
+        }
+        .feed-info {
+          .feed-btns {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            .feed-handle-btns {
+              .feed-btn {
+                padding: 0;
+                background-color: transparent;
+                border: none;
+                .icon {
+                  margin-right: 10px;
+                }
+              }
+            }
+            .bookmard-btn {
+              padding: 0;
+              background-color: transparent;
+              border: none;
+            }
+          }
+          .feed-container {
+            display: flex;
+            flex-direction: column;
+            padding-top: 0;
+            border-bottom: 1px solid var(--border-color);
+            .feed-likers {
+              display: flex;
+              flex-direction: column;
+              padding-bottom: 3px;
+              .first-liker {
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+              }
+            }
+            .comments-container {
+              display: flex;
+              flex-direction: column;
+              padding-top: 3px;
+              .comments {
+                .comment {
+                  position: relative;
+                  display: flex;
+                  margin-bottom: 3px;
+                  .user-id {
+                    margin-right: 3px;
+                  }
+                  .delete-btn {
+                    position: absolute;
+                    right: 5px;
+                    padding: 0;
+                    background-color: transparent;
+                    border: none;
+                    .delete-icon {
+                      width: 10px;
+                      height: 10px;
+                      color: var(--secondary-color);
+                    }
+                  }
+                }
+              }
+              .upload-time {
+                color: var(--secondary-color);
+              }
+            }
+          }
+        }
+        .new-comment {
+          input {
+            width: 370px;
+            margin-right: 20px;
+            border: none;
+            outline: none;
+          }
+          .upload-btn {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            color: var(--accent-color);
+            opacity: 0.5;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    aside {
+      position: sticky;
+      top: 90px;
+      width: 250px;
+      height: 420px;
+      .my-profile {
+        display: flex;
+        align-items: center;
+        img {
+          width: 50px;
+          height: 50px;
+          margin-right: 10px;
+        }
+        .user-name {
+          .user-id {
+            margin-bottom: 3px;
+          }
+          .user-nickname {
+            color: var(--secondary-color);
+          }
+        }
+      }
+      .follower-stories {
+        background-color: var(--content-background-color);
+        border: 1px solid var(--border-color);
+        .story-header {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+        }
+        .story-list {
+          display: flex;
+          flex-direction: column;
+          padding: 0 8px;
+          .story {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            .follower-info {
+              display: flex;
+              flex-direction: column;
+              .user-id {
+                margin-bottom: 5px;
+              }
+              .upload-time {
+                color: var(--secondary-color);
+              }
+            }
+          }
+        }
+      }
+      .following-rec {
+        background-color: var(--content-background-color);
+        border: 1px solid var(--border-color);
+        .following-rec-header {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+        }
+        .following-list {
+          display: flex;
+          flex-direction: column;
+          padding: 0 8px;
+          .following {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            .following-info {
+              display: flex;
+              flex-direction: column;
+              .user-id {
+                margin-bottom: 5px;
+              }
+              .rec-users {
+                display: inline-block;
+                width: 110px;
+                white-space: nowrap;
+                color: var(--secondary-color);
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+            .follow-btn {
+              width: 60px;
+              height: 30px;
+              margin-left: 10px;
+              color: var(--accent-color);
+              background-color: #ffffff;
+              border: none;
+            }
+          }
+        }
+      }
+      .westagram-info {
+        .westagram-link {
+          ul {
+            margin-bottom: 10px;
+            li {
+              display: inline-block;
+              margin: 0 3px 3px 0;
+              a {
+                margin-right: 3px;
+                color: var(--secondary-color);
+              }
+            }
+          }
+        }
+        .copyright {
+          color: var(--secondary-color);
+        }
+      }
+    }
+  }
+}
+
+/* common property */
+.feed-writer .writer-id,
+.writer-comment .user-id,
+.likers,
+.story-header .view-all,
+.following-rec-header .view-all,
+.following .follow-btn {
+  font-weight: 600;
+}
+
+aside .my-profile,
+aside .follower-stories,
+aside .following-rec,
+westagram-link {
+  margin-bottom: 10px;
+}
+
+.feed-writer-header,
+.feed-likers,
+.comments-container,
+.new-comment {
+  padding: 10px;
+}
+
+.icon {
+  width: 23px;
+  height: 23px;
+  opacity: 0.8;
+}
+
+.profile {
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+}
+
+.profile-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
