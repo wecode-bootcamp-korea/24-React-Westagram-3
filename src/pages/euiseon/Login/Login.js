@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
+import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor() {
@@ -20,6 +21,10 @@ class Login extends React.Component {
     this.setState({
       pwInputValue: event.target.value,
     });
+  };
+
+  goToMain = () => {
+    this.props.history.push('/main-euiseon');
   };
 
   render() {
@@ -67,6 +72,7 @@ class Login extends React.Component {
                         ? false
                         : true
                     }
+                    onClick={this.goToMain}
                   >
                     <span>로그인</span>
                   </button>
