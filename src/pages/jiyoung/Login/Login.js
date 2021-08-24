@@ -46,7 +46,15 @@ class Login extends React.Component {
               />
             </form>
             <Link to="/main-jiyoung">
-              <button className="login-btn">로그인</button>
+              <button
+                className={
+                  this.state.idVal.includes('@') && this.state.pwVal.length >= 5
+                    ? 'login-btn active'
+                    : 'login-btn'
+                }
+              >
+                로그인
+              </button>
             </Link>
           </div>
           <a href="#!" className="find-pw">
