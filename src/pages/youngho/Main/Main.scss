@@ -13,6 +13,8 @@ body {
   border-collapse: collapse;
 }
 article {
+  // display: flex;
+  // flex-direction: column;
   width: 800px;
   background-color: white;
 }
@@ -70,7 +72,7 @@ main {
   padding: 60px 0px;
   background-color: #fafafa;
 }
-.feeds {
+.content {
   display: flex;
   justify-content: space-around;
   flex-direction: row;

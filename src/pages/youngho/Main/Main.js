@@ -2,6 +2,7 @@ import React from 'react';
 
 import Comment from '../../../components/Comment/Comment';
 import Nav from '../../../components/Nav/Nav';
+import Feed from '../../../components/Feed/Feed';
 
 import './Main.scss';
 
@@ -10,13 +11,15 @@ class Main extends React.Component {
     super();
     this.state = {
       comments: [],
+      feeds: [],
       commentContent: '',
     };
   }
 
   addComment = () => {
-    let _comments = this.state.comments;
-    _comments.push(this.state.commentContent);
+    const { comments } = this.state;
+    const _comments = comments;
+    _comments.push({ content: this.state.commentContent });
     this.setState({
       comments: _comments,
       commentContent: '',
@@ -36,92 +39,111 @@ class Main extends React.Component {
     }
   };
 
+  componentDidMount() {
+    fetch('http://localhost:3000/data/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feeds: data,
+        });
+      });
+  }
+
   render() {
-    const { comments, commentContent } = this.state;
+    const { comments, commentContent, feeds } = this.state;
     const { commentEnterPress, onChange, addComment } = this;
     return (
       <div>
         <Nav />
         <main>
-          <div className="feeds">
-            <article>
-              <div className="feedTop">
-                <div className="feedUser">
+          <div className="content">
+            <div>
+              <article>
+                <div className="feedTop">
+                  <div className="feedUser">
+                    <img
+                      className="smallUserPicture"
+                      alt="프로필사진"
+                      src="/images/youngho/hanRiver.jpeg"
+                    />
+                    <div className="feedId boldFont">bbangho</div>
+                  </div>
                   <img
-                    className="smallUserPicture"
-                    alt="프로필사진"
-                    src="/images/youngho/hanRiver.jpeg"
+                    className="feedMore"
+                    alt="더보기"
+                    src="/images/youngho/more.png"
                   />
-                  <div className="feedId boldFont">bbangho</div>
                 </div>
                 <img
-                  className="feedMore"
-                  alt="더보기"
-                  src="/images/youngho/more.png"
+                  className="feedPicture"
+                  alt="피드사진"
+                  src="/images/youngho/hanRiver.jpeg"
                 />
-              </div>
-              <img
-                className="feedPicture"
-                alt="피드사진"
-                src="/images/youngho/hanRiver.jpeg"
-              />
-              <div className="feedBottom">
-                <div className="feedIcons">
-                  <div className="FeedBottomLeftIcon">
-                    <img alt="빨간색하트" src="/images/youngho/redHeart.png" />
-                    <img alt="메세지" src="/images/youngho/speech-bubble.png" />
-                    <img alt="업로드" src="/images/youngho/upload.png" />
+                <div className="feedBottom">
+                  <div className="feedIcons">
+                    <div className="FeedBottomLeftIcon">
+                      <img
+                        alt="빨간색하트"
+                        src="/images/youngho/redHeart.png"
+                      />
+                      <img
+                        alt="메세지"
+                        src="/images/youngho/speech-bubble.png"
+                      />
+                      <img alt="업로드" src="/images/youngho/upload.png" />
+                    </div>
+                    <img alt="저장" src="/images/youngho/ribbon.png" />
                   </div>
-                  <img alt="저장" src="/images/youngho/ribbon.png" />
+                  <div className="like">
+                    <img
+                      alt="좋아요를 누른 사람 사진"
+                      src="/images/youngho/hanRiver.jpeg"
+                    />
+                    <span className="boldFont">manja</span>님
+                    <span className="boldFont">외 7명</span>이 좋아합니다
+                  </div>
+                  {comments.map((comment, i) => {
+                    return (
+                      <Comment
+                        key={`comment${i}`}
+                        userName={comment.userName}
+                        comment={comment.content}
+                      />
+                    );
+                  })}
                 </div>
-                <div className="like">
-                  <img
-                    alt="좋아요를 누른 사람 사진"
-                    src="/images/youngho/hanRiver.jpeg"
+                <form className="addCommentFrom">
+                  <input
+                    className="writeComment"
+                    type="text"
+                    placeholder="댓글 달기..."
+                    onKeyPress={commentEnterPress}
+                    onChange={onChange}
+                    value={commentContent}
                   />
-                  <span className="boldFont">manja</span>님
-                  <span className="boldFont">외 7명</span>이 좋아합니다
-                </div>
-                <div className="comment">
-                  <div>
-                    <span className="boldFont">bbangho</span>한강 다녀감~✌️
-                  </div>
-                  <div>
-                    <span className="boldFont">manja</span>한강 갱~ 🔫 🔫
-                    <img
-                      className="commentDelete"
-                      alt="댓글 삭제"
-                      src="/images/youngho/garbage.png"
-                    />
-                    <img
-                      className="commentHeart"
-                      alt="댓글 하트"
-                      src="/images/youngho/heart.png"
-                    />
-                    <div>42분 전</div>
-                  </div>
-                </div>
-                {comments.map((comment, i) => {
-                  return <Comment key={`comment${i}`} comment={comment} />;
-                })}
-              </div>
-              <form className="addCommentFrom">
-                <input
-                  className="writeComment"
-                  type="text"
-                  placeholder="댓글 달기..."
-                  onKeyPress={commentEnterPress}
-                  onChange={onChange}
-                  value={commentContent}
-                />
-                <input
-                  className="postingButton"
-                  type="button"
-                  defaultValue="게시"
-                  onClick={addComment}
-                />
-              </form>
-            </article>
+                  <input
+                    className="postingButton"
+                    type="button"
+                    defaultValue="게시"
+                    onClick={addComment}
+                  />
+                </form>
+              </article>
+              {feeds.map(feed => {
+                return (
+                  <Feed
+                    key={feed.id}
+                    data={feed}
+                    // onKeyPress={commentEnterPress}
+                    onChange={onChange}
+                    value={commentContent}
+                    // onClick={addComment}
+                  />
+                );
+              })}
+            </div>
             <div className="mainRight">
               <div className="rightTop">
                 <img

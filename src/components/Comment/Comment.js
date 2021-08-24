@@ -4,10 +4,10 @@ import './Comment.scss';
 
 class Comment extends React.Component {
   render() {
-    const { comment } = this.props;
+    const { comment, userName, isLiked } = this.props;
     return (
       <div className="comment">
-        <span className="boldFont">bbangho</span>
+        <span className="boldFont">{userName ? userName : 'bbangho'}</span>
         {comment}
         <img
           className="commentDelete"
@@ -17,7 +17,11 @@ class Comment extends React.Component {
         <img
           className="commentHeart"
           alt="댓글 하트"
-          src="/images/youngho/heart.png"
+          src={
+            isLiked
+              ? '/images/youngho/redHeart.png'
+              : '/images/youngho/heart.png'
+          }
         />
       </div>
     );
