@@ -17,9 +17,9 @@ class Main extends React.Component {
   }
 
   addComment = () => {
-    const { comments } = this.state;
+    const { comments, commentContent } = this.state;
     const _comments = comments;
-    _comments.push({ content: this.state.commentContent });
+    _comments.push({ content: commentContent });
     this.setState({
       comments: _comments,
       commentContent: '',
@@ -27,8 +27,9 @@ class Main extends React.Component {
   };
 
   onChange = e => {
+    const { value } = e.target;
     this.setState({
-      commentContent: e.target.value,
+      commentContent: value,
     });
   };
 
@@ -136,10 +137,8 @@ class Main extends React.Component {
                   <Feed
                     key={feed.id}
                     data={feed}
-                    // onKeyPress={commentEnterPress}
                     onChange={onChange}
                     value={commentContent}
-                    // onClick={addComment}
                   />
                 );
               })}

@@ -12,20 +12,15 @@ class Login extends React.Component {
     };
   }
 
-  handleIdInput = e => {
+  handleLoginInput = e => {
+    const { value, name } = e.target;
     this.setState({
-      loginId: e.target.value,
-    });
-  };
-
-  handlePasswordInput = e => {
-    this.setState({
-      loginPassword: e.target.value,
+      [name]: value,
     });
   };
 
   render() {
-    const { checkIdPassword, handleIdInput, handlePasswordInput } = this;
+    const { checkIdPassword, handleLoginInput } = this;
     const { loginId, loginPassword } = this.state;
     return (
       <div>
@@ -34,15 +29,17 @@ class Login extends React.Component {
           <form className="loginForm" onKeyUp={checkIdPassword}>
             <input
               id="id"
+              name="loginId"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={handleIdInput}
+              onChange={handleLoginInput}
             />
             <input
               id="password"
+              name="loginPassword"
               type="password"
               placeholder="비밀번호"
-              onChange={handlePasswordInput}
+              onChange={handleLoginInput}
             />
             <Link to="/main">
               <button
@@ -54,6 +51,13 @@ class Login extends React.Component {
                     : 'buttonDisabled'
                 }
                 id="loginButton"
+                disabled={
+                  loginId.length &&
+                  loginPassword.length >= 5 &&
+                  loginId.includes('@')
+                    ? false
+                    : true
+                }
               >
                 로그인
               </button>

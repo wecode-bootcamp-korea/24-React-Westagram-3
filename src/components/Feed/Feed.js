@@ -7,17 +7,14 @@ import './Feed.scss';
 class Feed extends React.Component {
   render() {
     const { onKeyPress, onChange, value, onClick } = this.props;
+    const { alt, img, userName } = this.props.data;
     return (
       <div className="feed">
         <article>
           <div className="feedTop">
             <div className="feedUser">
-              <img
-                className="smallUserPicture"
-                alt={this.props.data.alt}
-                src={this.props.data.img}
-              />
-              <div className="feedId boldFont">{this.props.data.userName}</div>
+              <img className="smallUserPicture" alt={alt} src={img} />
+              <div className="feedId boldFont">{userName}</div>
             </div>
             <img
               className="feedMore"
@@ -25,11 +22,7 @@ class Feed extends React.Component {
               src="/images/youngho/more.png"
             />
           </div>
-          <img
-            className="feedPicture"
-            alt="피드사진"
-            src={this.props.data.img}
-          />
+          <img className="feedPicture" alt="피드사진" src={img} />
           <div className="feedBottom">
             <div className="feedIcons">
               <div className="FeedBottomLeftIcon">
@@ -40,11 +33,11 @@ class Feed extends React.Component {
               <img alt="저장" src="/images/youngho/ribbon.png" />
             </div>
             <div className="like">
-              <img alt="좋아요를 누른 사람 사진" src={this.props.data.img} />
-              <span className="boldFont">wecode</span>님
+              <img alt="좋아요를 누른 사람 사진" src={img} />
+              <span className="boldFont">manja</span>님
               <span className="boldFont">외 7명</span>이 좋아합니다
             </div>
-            {this.props.data.comment.map((comment, i) => {
+            {this.props.data.comment.map(comment => {
               return (
                 <Comment
                   key={comment.id}
