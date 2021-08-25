@@ -19,6 +19,35 @@ class Login extends React.Component {
     });
   };
 
+  handleLogin = () => {
+    fetch('http://10.58.0.84:8000/users/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.loginId,
+        password: this.state.loginPassword,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
+  };
+
+  // handleLogin = () => {
+  //   fetch('http://10.58.0.84:8000/users/signup', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       name: '김영호',
+  //       email: this.state.loginId,
+  //       password: this.state.loginPassword,
+  //       phone_number: '01012345678',
+  //       date_of_birth: '1995-07-07',
+  //       gender: 'M',
+  //       address: 'Seoul',
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => console.log('결과: ', result));
+  // };
+
   render() {
     const { checkIdPassword, handleLoginInput } = this;
     const { loginId, loginPassword } = this.state;
@@ -43,6 +72,7 @@ class Login extends React.Component {
             />
             <Link to="/main">
               <button
+                onClick={this.handleLogin}
                 className={
                   loginId.length &&
                   loginPassword.length >= 5 &&

@@ -5,10 +5,11 @@ import Comment from '../Comment/Comment';
 import './Feed.scss';
 
 class Feed extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    const { comment } = this.props.data;
     this.state = {
-      comment: {},
+      comment: comment,
       commentInputValue: '',
     };
   }
