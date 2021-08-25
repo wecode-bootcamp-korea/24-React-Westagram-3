@@ -15,7 +15,6 @@ class Comment extends React.Component {
           src="/images/youngho/garbage.png"
         />
         <img
-          id={comment.id}
           className="commentHeart"
           alt="댓글 하트"
           src={

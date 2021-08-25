@@ -27,7 +27,7 @@ class Feed extends React.Component {
     });
   };
 
-  commentEnterPress = e => {
+  inputEnterPress = e => {
     if (e.key === 'Enter') {
       e.preventDefault();
       this.addComment();
@@ -42,7 +42,7 @@ class Feed extends React.Component {
   };
 
   render() {
-    const { commentEnterPress, onChange, commentInputValue, addComment } = this;
+    const { inputEnterPress, onChange, commentInputValue, addComment } = this;
     const { alt, img, userName, comment } = this.props.data;
     return (
       <div className="feed">
@@ -81,7 +81,6 @@ class Feed extends React.Component {
                   userName={comment.userName}
                   comment={comment.content}
                   isLiked={comment.isLiked}
-                  delete_comment={this.delete_comment}
                 />
               );
             })}
@@ -91,7 +90,7 @@ class Feed extends React.Component {
               className="writeComment"
               type="text"
               placeholder="댓글 달기..."
-              onKeyPress={commentEnterPress}
+              onKeyPress={inputEnterPress}
               onChange={onChange}
               value={commentInputValue}
             />
