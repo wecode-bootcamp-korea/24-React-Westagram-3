@@ -11,17 +11,14 @@ class Main extends React.Component {
   }
 
   addCommentBtn = () => {
-    console.log('hhihihihihihi');
     this.setState({
       commentList: this.state.commentList.concat([this.state.comment]),
       comment: '',
     });
-    console.log(this.state.commentList);
   };
 
   handleCommentInput = event => {
     this.setState({ comment: event.target.value });
-    console.log(this.state.comment);
   };
 
   render() {
