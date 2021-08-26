@@ -10,11 +10,30 @@ class Login extends React.Component {
       pwVal: '',
     };
   }
+
+  handleFetch = () => {
+    fetch('http://10.58.0.117:8000/users/sign-up', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: 'Hope',
+        phone: '010-2323-3434',
+        email: this.state.idVal,
+        nickname: 'Hope',
+        password: this.state.pwVal,
+        // comment: 'ssss',
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+      });
+  };
+
   render() {
     return (
       <div className="loginBoard">
         <div className="logo">Westagram</div>
-
+        <button onClick={this.handleFetch}> wow</button>
         <form action="" className="loginTable">
           <input
             onChange={function handleInput(e) {
@@ -41,11 +60,13 @@ class Login extends React.Component {
 
           <Link to="/main-sejun" style={{ textDecoration: 'none' }}>
             <button
+              onClick={this.loginFetch}
               className={
                 this.state.idVal.includes('@') && this.state.pwVal.length >= 5
                   ? 'loginBtn active'
                   : 'loginBtn nonActive'
               }
+              disabled
             >
               로그인
             </button>
