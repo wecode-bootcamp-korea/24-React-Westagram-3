@@ -16,15 +16,17 @@ class Feed extends React.Component {
 
   addComment = () => {
     const { comment, commentInputValue } = this.state;
-    const newComment = {
-      id: comment.length + 1,
-      content: commentInputValue,
-      isLiked: false,
-    };
-    this.setState({
-      comment: [...comment, newComment],
-      commentInputValue: '',
-    });
+    if (commentInputValue.length >= 1) {
+      const newComment = {
+        id: comment.length + 1,
+        content: commentInputValue,
+        isLiked: false,
+      };
+      this.setState({
+        comment: [...comment, newComment],
+        commentInputValue: '',
+      });
+    }
   };
 
   deleteComment = e => {
@@ -107,10 +109,13 @@ class Feed extends React.Component {
               value={commentInputValue}
             />
             <input
-              className="postingButton"
+              className={`postingButton ${
+                commentInputValue.length >= 1 ? 'activeButton' : ''
+              }`}
               type="button"
               defaultValue="게시"
               onClick={addComment}
+              disabled={commentInputValue.length >= 1 ? false : true}
             />
           </form>
         </article>
