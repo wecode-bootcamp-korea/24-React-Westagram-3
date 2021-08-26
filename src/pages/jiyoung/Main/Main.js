@@ -1,11 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Main/Main.scss';
+import Nav from '../../../components/Nav/Nav';
+import './Main.scss';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: [],
+      content: '',
+    };
+  }
+
+  keyDownEnter = event => {
+    if (this.state.content && event.key === 'Enter') {
+      event.preventDefault();
+      this.uploadComment();
+    }
+  };
+
+  getInputValue = event => {
+    this.setState({
+      content: event.target.value,
+    });
+  };
+
+  uploadComment = event => {
+    if (this.state.content) {
+      this.setState({
+        comment: this.state.comment.concat([this.state.content]),
+        content: '',
+      });
+    }
+  };
+
   render() {
     return (
       <div className="MainJiyoung">
+        <Nav />
         <main>
           <section className="contents">
             <article>
@@ -104,14 +136,38 @@ class Main extends React.Component {
                           />
                         </button>
                       </li>
+                      {this.state.comment.map(content => {
+                        return (
+                          <li className="comment">
+                            <span className="commenter user-id">yOungly</span>
+                            {content}
+                            <button type="button" className="delete-btn">
+                              <img
+                                alt="delete-btn"
+                                src="./images/jiyoung/cancel.png"
+                                className="delete-icon"
+                              />
+                            </button>
+                          </li>
+                        );
+                      })}
                     </ul>
                     <p className="upload-time">11분 전</p>
                   </div>
                 </div>
               </div>
               <div className="new-comment">
-                <input type="text" placeholder="댓글 달기..." />
-                <button type="submit" className="upload-btn">
+                <input
+                  type="text"
+                  placeholder="댓글 달기..."
+                  onKeyDown={this.keyDownEnter}
+                  onChange={this.getInputValue}
+                />
+                <button
+                  type="submit"
+                  className="upload-btn"
+                  onClick={this.uploadComment}
+                >
                   게시
                 </button>
               </div>
@@ -251,7 +307,6 @@ class Main extends React.Component {
             </div>
           </aside>
         </main>
-        <script src="js/main.js"></script>
       </div>
     );
   }
