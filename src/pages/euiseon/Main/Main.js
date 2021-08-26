@@ -26,20 +26,6 @@ class Main extends React.Component {
     const userID = '_curry_s';
     return (
       <div className="Main">
-        <div className="container">
-          <div className="flex-item">
-            <img className="insta-logo" src="images/euiseon/instagram.png" />
-          </div>
-          <div className="search-bar">
-            <input className="top-search" type="search" placeholder="검색" />
-          </div>
-          <div className="flex-item">
-            <img className="header-icons" src="images/euiseon/explore.png" />
-            <img className="header-icons" src="images/euiseon/heart.png" />
-            <img className="header-icons" src="images/euiseon/profile.png" />
-          </div>
-        </div>
-
         <main>
           <div className="feeds">
             <article>
