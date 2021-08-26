@@ -2,7 +2,30 @@ import React from 'react';
 import './Main.css';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: '',
+      commentList: [],
+    };
+  }
+
+  addCommentBtn = () => {
+    console.log('hhihihihihihi');
+    this.setState({
+      commentList: this.state.commentList.concat([this.state.comment]),
+      comment: '',
+    });
+    console.log(this.state.commentList);
+  };
+
+  handleCommentInput = event => {
+    this.setState({ comment: event.target.value });
+    console.log(this.state.comment);
+  };
+
   render() {
+    const userID = '_curry_s';
     return (
       <div className="Main">
         <div className="container">
@@ -142,15 +165,31 @@ class Main extends React.Component {
               </div>
               <div style={{ color: '#C7C7C7' }}>50분전</div>
               <div className="comments">
-                <span></span>
+                <ul>
+                  {this.state.commentList.map((comments, id) => {
+                    return (
+                      <li key={id}>
+                        {' '}
+                        {userID} : {comments}
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
               <div className="comment">
                 <input
                   className="comment-box"
                   type="text"
                   placeholder="댓글달기..."
+                  onChange={this.handleCommentInput}
+                  value={this.state.comment}
                 />
-                <button type="submit" className="submit-comment" type="text">
+                <button
+                  type="submit"
+                  className="submit-comment"
+                  type="text"
+                  onClick={this.addCommentBtn}
+                >
                   게시
                 </button>
               </div>

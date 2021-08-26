@@ -27,6 +27,23 @@ class Login extends React.Component {
     this.props.history.push('/main-euiseon');
   };
 
+  handleLogin = () => {
+    fetch('http://10.58.7.117:8000/user/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.idInputValue,
+        password: this.state.pwInputValue,
+        name: '서동규',
+        phone_number: '010-1111-1111',
+        address: '경기도 용인시',
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+      });
+  };
+
   render() {
     return (
       <div className="Login">
@@ -72,6 +89,7 @@ class Login extends React.Component {
                         ? false
                         : true
                     }
+                    onClick={this.handleLogin}
                     onClick={this.goToMain}
                   >
                     <span>로그인</span>
