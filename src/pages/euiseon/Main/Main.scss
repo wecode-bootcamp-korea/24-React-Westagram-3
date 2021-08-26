@@ -1,0 +1,240 @@
+.main {
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 50px;
+      width: 100%;
+      position: sticky;
+      border: 1px solid #dbdbdb;
+  
+      .insta-logo {
+        margin-top: 15px;
+        height: 40px;
+      }
+  
+      .search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 25px;
+        background-color: white;
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+  
+        .top-search {
+          flex: 1;
+          height: 25px;
+          border: none;
+          outline: none;
+        }
+      }
+  
+      .header-icons {
+        width: 30px;
+        height: 30px;
+        margin: 0 15px;
+      }
+    }
+  
+    main {
+      width: 1000px;
+      height: 100%;
+      margin: 0 auto;
+      padding-top: 94px;
+      padding-bottom: 50px;
+      background-color: #ffff;
+  
+      .feeds {
+        width: 614px;
+        margin-right: 34px;
+        display: inline-block;
+        background-color: #ffff;
+        overflow-y: hidden;
+  
+        article {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-content: center;
+          margin-top: 0;
+          padding-top: 0px;
+          box-sizing: border-box;
+          margin-left: 55px;
+          border: 1px solid #dbdbdb;
+          border-radius: 5px;
+          width: 500px;
+  
+          .feed-header {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+  
+            header {
+              display: flex;
+              align-items: center;
+              margin: 10px;
+  
+              .more-button {
+                margin-left: 380px;
+              }
+  
+              .curry {
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                margin-top: 20x;
+              }
+            }
+          }
+  
+          .feed-image {
+            max-width: 100%;
+          }
+  
+          .save-button {
+            margin-left: 380px;
+          }
+  
+          .likes-count {
+            display: flex;
+            margin-bottom: 5px;
+  
+            .comment-img {
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              margin: 0 5px;
+            }
+          }
+  
+          .comment {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            height: 40px;
+            border-top: 1px solid #dbdbdb;
+            align-items: center;
+  
+            .comment-box {
+              display: flex;
+              padding: 7px 0;
+              flex: 1;
+              outline: none;
+              border: 0;
+              outline: 0;
+            }
+  
+            .submit-comment {
+              border: none;
+              outline: none;
+              background-color: #fff;
+              color: skyblue;
+              padding-top: 10px;
+            }
+          }
+  
+          .mini-heart {
+            margin-left: 370px;
+          }
+        }
+      }
+  
+      .main-right {
+        width: 310px;
+        display: inline-block;
+        position: fixed;
+        top: 94px;
+        background-color: #ffff;
+  
+        .my-profile {
+          height: 56px;
+          margin-top: 10px;
+          margin-bottom: 25px;
+          padding-left: 12px;
+          display: flex;
+          align-items: center;
+          background-color: #ffff;
+  
+          .curry-my-Profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+  
+          .profile-ID {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            font-size: 14px;
+          }
+        }
+  
+        .story-section {
+          height: 212px;
+          margin-bottom: 20px;
+          overflow-y: auto;
+          background-color: #ffff;
+          border: 1px solid #dbdbdb;
+  
+          .story-header {
+            display: flex;
+            justify-content: space-between;
+          }
+  
+          .story-user1,
+          .story-user2,
+          .story-user3 {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+  
+            .users-side-panel {
+              font-size: 14px;
+              text-align: center;
+              margin-left: 10px;
+  
+              .userID {
+                font-weight: bold;
+                display: flex;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+  
+        .recommend-friend-profile {
+          height: 180px;
+          background-color: #ffff;
+          border: 1px solid #dbdbdb;
+  
+          .recommend-header {
+            display: flex;
+            justify-content: space-between;
+          }
+  
+          .story-user1,
+          .story-user2,
+          .story-user3 {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+  
+            .follow {
+              margin-left: 170px;
+              font-size: 12px;
+              font-weight: bold;
+              color: #0095f6;
+            }
+          }
+        }
+  
+        footer {
+          font-size: 14px;
+          color: #c7c7c7;
+        }
+      }
+    }
+  }
+  
