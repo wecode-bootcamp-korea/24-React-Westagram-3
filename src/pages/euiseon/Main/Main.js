@@ -1,5 +1,6 @@
 import React from 'react';
 import './Main.css';
+import Comment from './Comment';
 
 class Main extends React.Component {
   constructor() {
@@ -161,35 +162,14 @@ class Main extends React.Component {
                 </svg>
               </div>
               <div style={{ color: '#C7C7C7' }}>50분전</div>
-              <div className="comments">
-                <ul>
-                  {this.state.commentList.map((comments, id) => {
-                    return (
-                      <li key={id}>
-                        {' '}
-                        {userID} : {comments}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div className="comment">
-                <input
-                  className="comment-box"
-                  type="text"
-                  placeholder="댓글달기..."
-                  onChange={this.handleCommentInput}
-                  value={this.state.comment}
-                />
-                <button
-                  type="submit"
-                  className="submit-comment"
-                  type="text"
-                  onClick={this.addCommentBtn}
-                >
-                  게시
-                </button>
-              </div>
+              <Comment
+                commentList={this.state.commentList}
+                addCommentBtn={this.addCommentBtn}
+                handleCommentInput={this.handleCommentInput}
+                userID={this.userID}
+                comment={this.state.comment}
+                userID="_curry_s"
+              />
             </article>
           </div>
 
