@@ -1,7 +1,3 @@
-body {
-  background-color: #fafafa;
-}
-
 .contentWrapper {
   display: flex;
   justify-content: space-between;
@@ -137,80 +133,6 @@ body {
               }
             }
           }
-        }
-      }
-    }
-  }
-
-  aside {
-    width: 350px;
-    height: 100vh;
-    top: 0;
-    .asideContent {
-      width: 350px;
-      height: 50px;
-      padding-top: 80px;
-      position: fixed;
-      .sideHeader {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 30px;
-        align-items: center;
-        img {
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-        }
-        .sideHeaderId {
-          display: flex;
-          flex-direction: column;
-          padding-right: 100px;
-        }
-        .sideHeaderTrans {
-          font-size: 15px;
-          color: blue;
-        }
-      }
-
-      .asideStories {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 20px;
-      }
-
-      .recommends {
-        .rcmdUser {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px 20px;
-          img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-          }
-          .rcmdUserId {
-            display: flex;
-            flex-direction: column;
-          }
-          .follow {
-            color: blue;
-          }
-        }
-      }
-
-      .sideFooter {
-        padding: 30px 20px;
-        font-size: 12.5px;
-        color: rgb(142, 142, 142);
-        a {
-          color: rgb(142, 142, 142);
-          text-decoration: none;
-          padding-right: 8px;
-        }
-        .copyright {
-          line-height: 5;
-          font-size: 15px;
         }
       }
     }
