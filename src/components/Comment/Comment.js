@@ -4,7 +4,7 @@ import './Comment.scss';
 
 class Comment extends React.Component {
   render() {
-    const { comment, userName, isLiked } = this.props;
+    const { comment, userName, isLiked, deleteComment } = this.props;
     return (
       <div className="comment">
         <span className="boldFont">{userName ? userName : 'bbangho'}</span>
@@ -14,7 +14,7 @@ class Comment extends React.Component {
           className="commentDelete"
           alt="댓글 삭제"
           src="/images/youngho/garbage.png"
-          onClick={this.props.deleteComment}
+          onClick={deleteComment}
         />
         <img
           className="commentHeart"
