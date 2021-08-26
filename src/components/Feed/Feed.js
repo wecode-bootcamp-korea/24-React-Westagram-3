@@ -15,16 +15,26 @@ class Feed extends React.Component {
   }
 
   addComment = () => {
-    const comment = this.props.data.comment;
-    const _comment = comment;
-    _comment.push({
-      id: _comment.length + 1,
-      content: this.state.commentInputValue,
+    const { comment, commentInputValue } = this.state;
+    const newComment = {
+      id: comment.length + 1,
+      content: commentInputValue,
       isLiked: false,
-    });
+    };
     this.setState({
-      comment: _comment,
-      // commentInputValue: '',
+      comment: [...comment, newComment],
+      commentInputValue: '',
+    });
+  };
+
+  deleteComment = e => {
+    const deleteCommentId = Number(e.target.id);
+    const result = this.state.comment.filter(
+      comment => comment.id !== deleteCommentId
+    );
+    console.log(result);
+    this.setState({
+      comment: result,
     });
   };
 
@@ -43,8 +53,10 @@ class Feed extends React.Component {
   };
 
   render() {
-    const { inputEnterPress, onChange, commentInputValue, addComment } = this;
-    const { alt, img, userName, comment } = this.props.data;
+    const { inputEnterPress, onChange, addComment } = this;
+    const { commentInputValue, comment } = this.state;
+    const { alt, img, userName } = this.props.data;
+
     return (
       <div className="feed">
         <article>
@@ -82,6 +94,7 @@ class Feed extends React.Component {
                   userName={comment.userName}
                   comment={comment.content}
                   isLiked={comment.isLiked}
+                  deleteComment={this.deleteComment}
                 />
               );
             })}

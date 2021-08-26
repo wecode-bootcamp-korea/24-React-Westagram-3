@@ -37,6 +37,7 @@ class Main extends React.Component {
               {feeds.map(feed => {
                 return <Feed key={`feed${feed.id}`} data={feed} />;
               })}
+              {/* <FeedList data={feeds} /> */}
             </div>
             <div className="mainRight">
               <div className="rightTop">

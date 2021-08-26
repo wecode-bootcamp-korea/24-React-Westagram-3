@@ -10,9 +10,11 @@ class Comment extends React.Component {
         <span className="boldFont">{userName ? userName : 'bbangho'}</span>
         {comment}
         <img
+          id={this.props.id}
           className="commentDelete"
           alt="댓글 삭제"
           src="/images/youngho/garbage.png"
+          onClick={this.props.deleteComment}
         />
         <img
           className="commentHeart"
