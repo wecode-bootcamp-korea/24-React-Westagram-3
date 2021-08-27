@@ -2,7 +2,6 @@ import React from 'react';
 
 import Nav from '../../../components/Nav/Nav';
 import Feed from '../../../components/Feed/Feed';
-
 import './Main.scss';
 
 class Main extends React.Component {
@@ -28,6 +27,50 @@ class Main extends React.Component {
   render() {
     const { feeds } = this.state;
 
+    const STORIES = [
+      {
+        alt: '스토리 프로필 사진',
+        img: '/images/youngho/wecode.png',
+        name: 'wecorder1',
+        time: 43,
+      },
+      {
+        alt: '스토리 프로필 사진',
+        img: '/images/youngho/wecode.png',
+        name: 'wecorder2',
+        time: 3,
+      },
+      {
+        alt: '스토리 프로필 사진',
+        img: '/images/youngho/wecode.png',
+        name: 'wecorder3',
+        time: 23,
+      },
+      {
+        alt: '스토리 프로필 사진',
+        img: '/images/youngho/wecode.png',
+        name: 'wecorder4',
+        time: 27,
+      },
+      {
+        alt: '스토리 프로필 사진',
+        img: '/images/youngho/wecode.png',
+        name: 'wecorder5',
+        time: 13,
+      },
+    ];
+
+    const Stories = STORIES.map(store => {
+      return (
+        <div className="story">
+          <img alt={store.alt} src={store.img} />
+          <div>
+            <div className="boldFont">{store.name}</div>
+            <div className="lightFont">{store.time}분 전</div>
+          </div>
+        </div>
+      );
+    });
     return (
       <div>
         <Nav />
@@ -55,58 +98,7 @@ class Main extends React.Component {
                   <div className="lightFont">스토리</div>
                   <div className="boldFont">모두 보기</div>
                 </div>
-                <div className="seeStory">
-                  <div className="story">
-                    <img
-                      alt="스토리 프로필 사진"
-                      src="/images/youngho/wecode.png"
-                    />
-                    <div>
-                      <div className="boldFont">wecoder1</div>
-                      <div className="lightFont">16분 전</div>
-                    </div>
-                  </div>
-                  <div className="story">
-                    <img
-                      alt="스토리 프로필 사진"
-                      src="/images/youngho/wecode.png"
-                    />
-                    <div>
-                      <div className="boldFont">wecoder2</div>
-                      <div className="lightFont">52분 전</div>
-                    </div>
-                  </div>
-                  <div className="story">
-                    <img
-                      alt="스토리 프로필 사진"
-                      src="/images/youngho/wecode.png"
-                    />
-                    <div>
-                      <div className="boldFont">wecoder3</div>
-                      <div className="lightFont">5분 전</div>
-                    </div>
-                  </div>
-                  <div className="story">
-                    <img
-                      alt="스토리 프로필 사진"
-                      src="/images/youngho/wecode.png"
-                    />
-                    <div>
-                      <div className="boldFont">wecoder4</div>
-                      <div className="lightFont">26분 전</div>
-                    </div>
-                  </div>
-                  <div className="story">
-                    <img
-                      alt="스토리 프로필 사진"
-                      src="/images/youngho/wecode.png"
-                    />
-                    <div>
-                      <div className="boldFont">wecoder5</div>
-                      <div className="lightFont">53분 전</div>
-                    </div>
-                  </div>
-                </div>
+                <div className="seeStory">{Stories}</div>
               </div>
               <div className="rightMiddle">
                 <div className="friendsRecommendContainer">

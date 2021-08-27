@@ -2,67 +2,77 @@
 body {
   background-color: #fafafa;
 }
+
 .container {
   text-align: center;
-  border: 1px solid #e6e6e6;
-  background-color: white;
   width: 600px;
   height: 600px;
   margin: 50px auto 0 auto;
+  border: 1px solid #e6e6e6;
+  background-color: white;
 }
+
 .header {
+  padding: 30px;
   font-family: 'Lobster', cursive;
   font-size: 70px;
   font-weight: 1px;
-  padding: 30px;
 }
+
 .loginForm {
   width: 425px;
   margin: 0 auto;
 }
+
 #id {
   display: block;
   width: 100%;
   margin: 20px 0px auto;
-  font-size: 20px;
   padding: 15px;
   border: 1px solid #efefef;
   background-color: #fafafa;
   border-radius: 5px;
+  font-size: 20px;
 }
+
 #password {
   display: block;
   width: 100%;
   margin: 20px 0px auto;
-  font-size: 20px;
   padding: 15px;
   border: 1px solid #efefef;
   background-color: #fafafa;
   border-radius: 5px;
+  font-size: 20px;
 }
+
 #loginButton {
   display: block;
+  width: 459px;
   margin: 20px 0px auto;
-  font-size: 20px;
   padding: 15px;
+  border: 0px;
   border-radius: 5px;
   color: white;
-  border: 0px;
-  width: 459px;
+  font-size: 20px;
 }
+
 .findPassword {
-  text-decoration: none;
-  margin-top: 180px;
-  height: 50px;
   display: block;
+  height: 50px;
+  margin-top: 180px;
   font-size: 18px;
+  text-decoration: none;
 }
+
 .buttonDisabled {
   background-color: #c5e1fc;
 }
+
 .buttonActivate {
   background-color: #0095f6;
 }
+
 a {
   text-decoration: none;
 }

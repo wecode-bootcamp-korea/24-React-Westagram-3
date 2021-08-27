@@ -11,13 +11,13 @@ class Comment extends React.Component {
         {comment}
         <img
           id={this.props.id}
-          className="commentDelete"
+          className="commentIcons"
           alt="댓글 삭제"
           src="/images/youngho/garbage.png"
           onClick={deleteComment}
         />
         <img
-          className="commentHeart"
+          className="commentIcons"
           alt="댓글 하트"
           src={
             isLiked
