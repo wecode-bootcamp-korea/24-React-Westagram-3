@@ -1,44 +1,44 @@
 [
   {
-    "id": 1,
-    "profile": "images/sejun/trail.jpeg",
-    "userName": "BBC News",
+    "feedId": 1,
+    "feedImg": "images/sejun/trail.jpeg",
+    "feedAuthor": "BBC News",
     "comments": [
       {
-        "id": 1,
-        "userName": "olympics",
+        "commentId": 1,
+        "commentUser": "olympics",
         "comment": "Faster, Higher, Stronger….Together."
       },
       {
-        "id": 2,
-        "userName": "youtube",
+        "commentId": 2,
+        "commentUser": "youtube",
         "comment": "we are the best."
       },
       {
-        "id": 3,
-        "userName": "facebook",
+        "commentId": 3,
+        "commentUser": "facebook",
         "comment": "I'm your father."
       }
     ]
   },
   {
-    "id": 2,
-    "profile": "images/sejun/space.jpeg",
-    "userName": "CNBC",
+    "feedId": 2,
+    "feedImg": "images/sejun/space.jpeg",
+    "feedAuthor": "CNBC",
     "comments": [
       {
-        "id": 1,
-        "userName": "Google",
+        "commentId": 1,
+        "commentUser": "Google",
         "comment": "I'm alphabet."
       },
       {
-        "id": 2,
-        "userName": "Tesla",
+        "commentId": 2,
+        "commentUser": "Tesla",
         "comment": "I will go to Mars"
       },
       {
-        "id": 3,
-        "userName": "Amazon",
+        "commentId": 3,
+        "commentUser": "Amazon",
         "comment": "travel to Space~~"
       }
     ]

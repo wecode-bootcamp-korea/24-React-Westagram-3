@@ -2,7 +2,7 @@ import React from 'react';
 
 class Comment extends React.Component {
   render() {
-    const { user, data, key } = this.props;
+    const { key, user, data } = this.props;
     return (
       <div className="comment">
         <span className="commentId" id={key}>
@@ -10,7 +10,7 @@ class Comment extends React.Component {
         </span>
         <span className="commentContent">{data}</span>
         <button className="likeBtn">
-          <i class="far fa-heart"></i>
+          <i className="far fa-heart"></i>
         </button>
       </div>
     );

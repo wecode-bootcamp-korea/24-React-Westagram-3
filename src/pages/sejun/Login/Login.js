@@ -20,13 +20,8 @@ class Login extends React.Component {
         email: this.state.idVal,
         nickname: 'Hope',
         password: this.state.pwVal,
-        // comment: 'ssss',
       }),
-    })
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-      });
+    }).then(res => res.json());
   };
 
   render() {
