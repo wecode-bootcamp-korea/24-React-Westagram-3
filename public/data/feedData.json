@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "userName": "bbangho",
+    "alt": "wecode",
+    "img": "/images/youngho/hanRiver.jpeg",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "bbangho",
+        "content": "한강 다녀감~ ✌️",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "manja",
+        "content": "한강 갱~ 🔫 🔫",
+        "isLiked": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "joonsikyang",
+    "alt": "wecode",
+    "img": "/images/youngho/we.jpeg",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "joonsikyang",
+        "content": "Work hard 🤯",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "bbangho",
+        "content": "Go for it 🤣",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "manja",
+        "content": "🔥🔥",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userName": "jayPark",
+    "alt": "wecode",
+    "img": "/images/youngho/we.jpeg",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "jayPark",
+        "content": "Let's get it",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "bbanho",
+        "content": "Skrt~ 😎",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "gildong",
+        "content": "Yo~ 🌞",
+        "isLiked": true
+      }
+    ]
+  }
+]
