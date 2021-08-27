@@ -51,6 +51,7 @@ class Login extends React.Component {
   render() {
     const { checkIdPassword, handleLoginInput } = this;
     const { loginId, loginPassword } = this.state;
+
     return (
       <div>
         <div className="container">
@@ -74,7 +75,7 @@ class Login extends React.Component {
               <button
                 onClick={this.handleLogin}
                 className={
-                  loginId.length &&
+                  loginId.length >= 5 &&
                   loginPassword.length >= 5 &&
                   loginId.includes('@')
                     ? 'buttonActivate'
@@ -82,7 +83,7 @@ class Login extends React.Component {
                 }
                 id="loginButton"
                 disabled={
-                  loginId.length &&
+                  loginId.length >= 5 &&
                   loginPassword.length >= 5 &&
                   loginId.includes('@')
                     ? false

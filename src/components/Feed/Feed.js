@@ -110,12 +110,12 @@ class Feed extends React.Component {
             />
             <input
               className={`postingButton ${
-                commentInputValue.length >= 1 ? 'activeButton' : ''
+                commentInputValue.length ? 'activeButton' : ''
               }`}
               type="button"
               defaultValue="게시"
               onClick={addComment}
-              disabled={commentInputValue.length >= 1 ? false : true}
+              disabled={commentInputValue.length ? false : true}
             />
           </form>
         </article>
