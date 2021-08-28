@@ -6,8 +6,8 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      idVal: '',
-      pwVal: '',
+      idValue: '',
+      pwValue: '',
     };
   }
 
@@ -17,23 +17,22 @@ class Login extends React.Component {
       body: JSON.stringify({
         name: 'Hope',
         phone: '010-2323-3434',
-        email: this.state.idVal,
+        email: this.state.idValue,
         nickname: 'Hope',
-        password: this.state.pwVal,
+        password: this.state.pwValue,
       }),
-    }).then(res => res.json());
+    });
   };
 
   render() {
     return (
       <div className="loginBoard">
         <div className="logo">Westagram</div>
-        <button onClick={this.handleFetch}> wow</button>
         <form action="" className="loginTable">
           <input
             onChange={function handleInput(e) {
               this.setState({
-                idVal: e.target.value,
+                idValue: e.target.value,
               });
               e.preventDefault();
             }.bind(this)}
@@ -44,7 +43,7 @@ class Login extends React.Component {
           <input
             onChange={function handleInput(e) {
               this.setState({
-                pwVal: e.target.value,
+                pwValue: e.target.value,
               });
               e.preventDefault();
             }.bind(this)}
@@ -55,9 +54,10 @@ class Login extends React.Component {
 
           <Link to="/main-sejun" style={{ textDecoration: 'none' }}>
             <button
-              onClick={this.loginFetch}
+              onClick={this.handleFetch}
               className={
-                this.state.idVal.includes('@') && this.state.pwVal.length >= 5
+                this.state.idValue.includes('@') &&
+                this.state.pwValue.length >= 5
                   ? 'loginBtn active'
                   : 'loginBtn nonActive'
               }
@@ -67,7 +67,6 @@ class Login extends React.Component {
             </button>
           </Link>
         </form>
-
         <Link
           to="/signup"
           className="forgetPw"

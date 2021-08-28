@@ -1,16 +1,15 @@
-body {
-  background-color: #fafafa;
-}
-
-.contentWrapper {
+@mixin flexSpaceBetween {
   display: flex;
   justify-content: space-between;
+}
+.Main {
+  @include flexSpaceBetween();
   width: 975px;
   margin: auto;
-  main {
+
+  .mainJun {
     width: 600px;
     margin-top: 80px;
-
     .stories {
       overflow: hidden;
       white-space: nowrap;
@@ -27,122 +26,9 @@ body {
         margin-left: 35px;
       }
     }
-
-    article {
-      width: 100%;
-      .articleWrapper {
-        margin: 30px 0;
-        background-color: white;
-        border: 1px solid #dbdbdb;
-        .articleHeader {
-          display: flex;
-          justify-content: space-between;
-          margin: 10px 20px;
-          .articleAuthor {
-            display: table;
-            align-self: center;
-            .authorId {
-              line-height: 35px;
-              padding-left: 30px;
-            }
-            img {
-              width: 35px;
-              height: 35px;
-              border-radius: 35px;
-            }
-          }
-          .dot {
-            line-height: 35px;
-          }
-        }
-        .feed {
-          img {
-            width: 600px;
-            height: 600px;
-          }
-          .comments {
-            padding: 10px 10px;
-            .commentWrapper {
-              .commentEmojis {
-                display: flex;
-                justify-content: space-between;
-                .emoji {
-                  i {
-                    font-size: 25px;
-                    padding: 5px 5px;
-                  }
-                }
-              }
-              .likes {
-                display: inline-block;
-                margin: 5px 0;
-                font-size: 15px;
-              }
-              .oldComments {
-                .comment {
-                  padding: 3px 0;
-                  line-height: 1.2;
-                  .commentId {
-                    font-weight: 800;
-                  }
-                  .commentContent {
-                    padding-left: 5px;
-                  }
-                  .more {
-                    font-size: 15px;
-                    color: rgb(142, 142, 142);
-                  }
-                  .likeBtn {
-                    border: none;
-                    background-color: white;
-                    float: right;
-                    line-height: 1.5;
-                  }
-                }
-              }
-
-              .hours {
-                font-size: 10px;
-                margin: 5px 0;
-                color: #dbdbdb;
-              }
-
-              .commentInput {
-                .form {
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  padding: 10px 15px;
-                  i {
-                    font-size: 30px;
-                    padding-right: 10px;
-                  }
-                  .commentArea {
-                    width: 80%;
-                    height: 100%;
-                    font-size: 18px;
-                    border: none;
-                    :focus {
-                      outline: none;
-                    }
-                  }
-                  .entry {
-                    border: none;
-                    background-color: transparent;
-                    font-size: 18px;
-                    color: #4390e7;
-                    width: 60px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 
-  aside {
+  .asideJun {
     width: 350px;
     height: 100vh;
     top: 0;
@@ -152,8 +38,7 @@ body {
       padding-top: 80px;
       position: fixed;
       .sideHeader {
-        display: flex;
-        justify-content: space-between;
+        @include flexSpaceBetween();
         padding: 20px 30px;
         align-items: center;
         img {
@@ -173,15 +58,13 @@ body {
       }
 
       .asideStories {
-        display: flex;
-        justify-content: space-between;
+        @include flexSpaceBetween();
         padding: 10px 20px;
       }
 
       .recommends {
         .rcmdUser {
-          display: flex;
-          justify-content: space-between;
+          @include flexSpaceBetween();
           align-items: center;
           padding: 10px 20px;
           img {

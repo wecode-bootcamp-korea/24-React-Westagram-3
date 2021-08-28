@@ -1,11 +1,10 @@
 import React from 'react';
-import Comment from '../Comment/Comment';
-import './Feed.scss';
+import Comment from '../../../components/Comment/Comment';
+import './Article.scss';
 
-class Feed extends React.Component {
+class Article extends React.Component {
   state = {
-    key: 1,
-    id: '3_jun',
+    user: '3_jun',
     comment: '',
     commentList: [],
   };
@@ -25,7 +24,7 @@ class Feed extends React.Component {
   };
   render() {
     return (
-      <article>
+      <article className="article">
         <div className="articleWrapper">
           <div className="articleHeader">
             <div className="articleAuthor">
@@ -36,7 +35,7 @@ class Feed extends React.Component {
               <span className="authorId">BBC News</span>
             </div>
             <div className="dot">
-              <i className="fas fa-ellipsis-h"></i>
+              <i className="fas fa-ellipsis-h" />
             </div>
           </div>
 
@@ -50,12 +49,12 @@ class Feed extends React.Component {
               <div className="commentWrapper">
                 <div className="commentEmojis">
                   <div className="emoji">
-                    <i className="far fa-heart"></i>
-                    <i className="far fa-comment"></i>
-                    <i className="far fa-envelope"></i>
+                    <i className="far fa-heart" />
+                    <i className="far fa-comment" />
+                    <i className="far fa-envelope" />
                   </div>
                   <div className="emoji">
-                    <i className="far fa-bookmark"></i>
+                    <i className="far fa-bookmark" />
                   </div>
                 </div>
 
@@ -73,36 +72,32 @@ class Feed extends React.Component {
                     <span className="commentId">john.johnson</span>
                     <span className="commentContent">what the heck</span>
                     <button className="likeBtn">
-                      <i className="far fa-heart"></i>
+                      <i className="far fa-heart" />
                     </button>
                   </div>
                   <div className="comment">
                     <span className="commentId">olympics</span>
                     <span className="commentContent">keeping going</span>
                     <button className="likeBtn">
-                      <i className="far fa-heart"></i>
+                      <i className="far fa-heart" />
                     </button>
                   </div>
                   <div className="comment">
                     <span className="commentId">gi_vely</span>
                     <span className="commentContent">🥳🥳🥳</span>
                     <button className="likeBtn">
-                      <i className="far fa-heart"></i>
+                      <i className="far fa-heart" />
                     </button>
                   </div>
                   {this.state.commentList.map(item => (
-                    <Comment
-                      key={this.state.key}
-                      user={this.state.id}
-                      data={item}
-                    />
+                    <Comment user={this.state.user} comment={item} />
                   ))}
                 </div>
 
                 <div className="hours">15시간 전</div>
                 <div className="commentInput">
                   <div action="" className="form">
-                    <i className="far fa-smile"></i>
+                    <i className="far fa-smile" />
                     <input
                       type="textarea"
                       className="commentArea"
@@ -129,4 +124,4 @@ class Feed extends React.Component {
   }
 }
 
-export default Feed;
+export default Article;
