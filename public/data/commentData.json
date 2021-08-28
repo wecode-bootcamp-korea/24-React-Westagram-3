@@ -1,0 +1,46 @@
+[
+  {
+    "feedId": 1,
+    "feedImg": "images/sejun/trail.jpeg",
+    "feedAuthor": "BBC News",
+    "comments": [
+      {
+        "commentId": 1,
+        "commentUser": "olympics",
+        "comment": "Faster, Higher, Stronger….Together."
+      },
+      {
+        "commentId": 2,
+        "commentUser": "youtube",
+        "comment": "we are the best."
+      },
+      {
+        "commentId": 3,
+        "commentUser": "facebook",
+        "comment": "I'm your father."
+      }
+    ]
+  },
+  {
+    "feedId": 2,
+    "feedImg": "images/sejun/space.jpeg",
+    "feedAuthor": "CNBC",
+    "comments": [
+      {
+        "commentId": 1,
+        "commentUser": "Google",
+        "comment": "I'm alphabet."
+      },
+      {
+        "commentId": 2,
+        "commentUser": "Tesla",
+        "comment": "I will go to Mars"
+      },
+      {
+        "commentId": 3,
+        "commentUser": "Amazon",
+        "comment": "travel to Space~~"
+      }
+    ]
+  }
+]
