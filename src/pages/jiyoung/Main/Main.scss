@@ -1,128 +1,196 @@
-:root {
-  --secondary-color: #8e8e8e;
-  --accent-color: #2a93fc;
-  --border-color: #ededed;
-  --background-color: #fafafa;
-  --content-background-color: #ffffff;
-}
+$secondary-color: #8e8e8e;
+$accent-color: #2a93fc;
+$border-color: #ededed;
+$background-color: #fafafa;
+$content-background-color: #ffffff;
 
-.MainJiyoung {
+.mainJiyoung {
   font-family: 'Hahmlet', serif;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: -0.3px;
+
   main {
     display: flex;
     justify-content: center;
     padding: 60px 50px;
-    background-color: var(--background-color);
+    background-color: $background-color;
     scroll-snap-type: y mandatory;
+
     section {
       article {
         scroll-snap-align: center;
         margin: 0 20px 20px 0;
-        background-color: var(--content-background-color);
-        border: 1px solid var(--border-color);
-        .feed-writer-header {
+        background-color: $content-background-color;
+        border: 1px solid $border-color;
+
+        .feedWriterHeader {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          .feed-writer {
+          padding: 10px;
+
+          .feedWriter {
             display: flex;
             align-items: center;
+
+            .profileImg {
+              width: 30px;
+              height: 30px;
+              margin-right: 10px;
+              border: 1px solid $border-color;
+              border-radius: 50%;
+            }
+
+            .writerId {
+              font-weight: 600;
+            }
           }
-          .menu-btn {
+
+          .menuBtn {
             padding: 0;
             background-color: transparent;
             border: none;
+
+            .icon {
+              width: 23px;
+              height: 23px;
+              opacity: 0.8;
+            }
           }
         }
-        .feed-img {
+
+        .feedImg {
           width: 450px;
           height: 500px;
           opacity: 1;
         }
-        .feed-info {
-          .feed-btns {
+        .feedInfo {
+          .feedBtns {
             display: flex;
             justify-content: space-between;
             padding: 10px;
-            .feed-handle-btns {
-              .feed-btn {
+
+            .feedHandleBtns {
+              .feedBtn {
                 padding: 0;
                 background-color: transparent;
                 border: none;
+
                 .icon {
+                  width: 23px;
+                  height: 23px;
                   margin-right: 10px;
+                  opacity: 0.8;
                 }
               }
             }
-            .bookmard-btn {
+
+            .bookmarkBtn {
               padding: 0;
               background-color: transparent;
               border: none;
+
+              .icon {
+                width: 23px;
+                height: 23px;
+                opacity: 0.8;
+              }
             }
           }
-          .feed-container {
+
+          .feedContainer {
             display: flex;
             flex-direction: column;
             padding-top: 0;
-            border-bottom: 1px solid var(--border-color);
-            .feed-likers {
+            border-bottom: 1px solid $border-color;
+
+            .feedLikers {
               display: flex;
               flex-direction: column;
-              padding-bottom: 3px;
-              .first-liker {
+              padding: 10px 10px 0 10px;
+
+              .firstLiker {
                 display: flex;
                 align-items: center;
                 margin-bottom: 8px;
+
+                .profileImg {
+                  width: 30px;
+                  height: 30px;
+                  margin-right: 10px;
+                  border: 1px solid $border-color;
+                  border-radius: 50%;
+                }
+
+                .likers {
+                  font-weight: 600;
+                }
+              }
+
+              .writerComment {
+                .userId {
+                  margin-right: 3px;
+                  font-weight: 600;
+                }
               }
             }
-            .comments-container {
+
+            .commentsContainer {
               display: flex;
               flex-direction: column;
-              padding-top: 3px;
+              padding: 5px 10px 10px 10px;
+
               .comments {
                 .comment {
                   position: relative;
                   display: flex;
                   margin-bottom: 5px;
-                  .user-id {
+
+                  .userId {
                     margin-right: 3px;
+                    font-weight: 600;
                   }
-                  .delete-btn {
+
+                  .deleteBtn {
                     position: absolute;
                     right: 5px;
                     padding: 0;
                     background-color: transparent;
                     border: none;
-                    .delete-icon {
+
+                    .deleteIcon {
                       width: 10px;
                       height: 10px;
-                      color: var(--secondary-color);
+                      color: $secondary-color;
                     }
                   }
                 }
               }
-              .upload-time {
-                color: var(--secondary-color);
+
+              .uploadTime {
+                color: $secondary-color;
               }
             }
           }
         }
-        .new-comment {
+        .newComment {
+          padding: 10px;
+
           input {
             width: 370px;
-            margin-right: 20px;
+            margin-right: 30px;
             border: none;
             outline: none;
           }
-          .upload-btn {
+
+          .uploadBtn {
             padding: 0;
             background-color: transparent;
             border: none;
-            color: var(--accent-color);
+            color: $accent-color;
             opacity: 0.5;
+
             &:hover {
               opacity: 1;
             }
@@ -130,158 +198,173 @@
         }
       }
     }
+
     aside {
       position: sticky;
       top: 90px;
       width: 250px;
       height: 420px;
-      .my-profile {
+
+      .myProfile {
         display: flex;
         align-items: center;
-        img {
+        margin-bottom: 10px;
+
+        .myProfileImg {
           width: 50px;
           height: 50px;
           margin-right: 10px;
+          border: 1px solid $border-color;
+          border-radius: 50%;
         }
-        .user-name {
-          .user-id {
+
+        .userName {
+          .userId {
             margin-bottom: 3px;
           }
-          .user-nickname {
-            color: var(--secondary-color);
+
+          .userNickname {
+            color: $secondary-color;
           }
         }
       }
-      .follower-stories {
-        background-color: var(--content-background-color);
-        border: 1px solid var(--border-color);
-        .story-header {
+
+      .followerStories {
+        margin-bottom: 10px;
+        background-color: $content-background-color;
+        border: 1px solid $border-color;
+
+        .storyHeader {
           display: flex;
           justify-content: space-between;
           padding: 10px;
+
+          .viewAll {
+            font-weight: 600;
+          }
         }
-        .story-list {
+
+        .listContainer {
           display: flex;
           flex-direction: column;
           padding: 0 8px;
+
           .story {
             display: flex;
             align-items: center;
             margin-bottom: 8px;
+
+            .profileImg {
+              width: 30px;
+              height: 30px;
+              margin-right: 10px;
+              border: 1px solid $border-color;
+              border-radius: 50%;
+            }
+
             .follower-info {
               display: flex;
               flex-direction: column;
-              .user-id {
+
+              .userId {
                 margin-bottom: 5px;
               }
-              .upload-time {
-                color: var(--secondary-color);
+
+              .uploadTime {
+                color: $secondary-color;
               }
             }
           }
         }
       }
-      .following-rec {
-        background-color: var(--content-background-color);
-        border: 1px solid var(--border-color);
-        .following-rec-header {
+
+      .followingRec {
+        margin-bottom: 10px;
+        background-color: $content-background-color;
+        border: 1px solid $border-color;
+
+        .followingRecHeader {
           display: flex;
           justify-content: space-between;
           padding: 10px;
+
+          .viewAll {
+            font-weight: 600;
+          }
         }
-        .following-list {
+
+        .listContainer {
           display: flex;
           flex-direction: column;
           padding: 0 8px;
+
           .following {
             display: flex;
             align-items: center;
             margin-bottom: 8px;
-            .following-info {
+
+            .profileImg {
+              width: 30px;
+              height: 30px;
+              margin-right: 10px;
+              border: 1px solid $border-color;
+              border-radius: 50%;
+            }
+
+            .followingInfo {
               display: flex;
               flex-direction: column;
-              .user-id {
+
+              .userId {
                 margin-bottom: 5px;
               }
-              .rec-users {
+
+              .recUsers {
                 display: inline-block;
                 width: 110px;
                 white-space: nowrap;
-                color: var(--secondary-color);
+                color: $secondary-color;
                 overflow: hidden;
                 text-overflow: ellipsis;
               }
             }
-            .follow-btn {
+
+            .followBtn {
               width: 60px;
               height: 30px;
               margin-left: 10px;
-              color: var(--accent-color);
+              color: $accent-color;
               background-color: #ffffff;
               border: none;
+              font-weight: 600;
             }
           }
         }
       }
-      .westagram-info {
-        .westagram-link {
+
+      .westagramInfo {
+        .westagramLink {
+          margin-bottom: 10px;
+
           ul {
             margin-bottom: 10px;
+
             li {
               display: inline-block;
               margin: 0 3px 3px 0;
+
               a {
                 margin-right: 3px;
-                color: var(--secondary-color);
+                color: $secondary-color;
               }
             }
           }
         }
+
         .copyright {
-          color: var(--secondary-color);
+          color: $secondary-color;
         }
       }
     }
   }
-}
-
-/* common property */
-.feed-writer .writer-id,
-.writer-comment .user-id,
-.likers,
-.story-header .view-all,
-.following-rec-header .view-all,
-.following .follow-btn {
-  font-weight: 600;
-}
-
-aside .my-profile,
-aside .follower-stories,
-aside .following-rec,
-westagram-link {
-  margin-bottom: 10px;
-}
-
-.feed-writer-header,
-.feed-likers,
-.comments-container,
-.new-comment {
-  padding: 10px;
-}
-
-.icon {
-  width: 23px;
-  height: 23px;
-  opacity: 0.8;
-}
-
-.profile {
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-}
-
-.profile-img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
 }

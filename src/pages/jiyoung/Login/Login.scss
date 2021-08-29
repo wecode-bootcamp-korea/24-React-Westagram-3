@@ -1,8 +1,9 @@
-.LoginJiyoung {
+.loginJiyoung {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
   .container {
     width: 400px;
     display: flex;
@@ -10,18 +11,22 @@
     align-items: center;
     padding: 30px;
     border: 1px solid #ededed;
+
     h1 {
       margin-bottom: 40px;
       font-family: 'Lobster', cursive;
       font-size: 45px;
     }
-    .login-container {
+
+    .loginContainer {
       display: flex;
       flex-direction: column;
       align-items: center;
-      .login-form {
+
+      .loginForm {
         text-align: center;
         padding: 20px;
+
         input {
           width: 300px;
           height: 40px;
@@ -33,11 +38,13 @@
           color: #8e8e8e;
           font-size: 12px;
         }
+
         &:first-child {
           margin-bottom: 6px;
         }
       }
-      .login-btn {
+
+      .loginBtn {
         width: 300px;
         height: 32px;
         margin-bottom: 100px;
@@ -49,13 +56,15 @@
         font-weight: 700;
         opacity: 0.3;
         cursor: not-allowed;
+
         &.active {
           opacity: 1;
           cursor: pointer;
         }
       }
     }
-    .find-pw {
+
+    .findPw {
       font-size: 12px;
       font-weight: 700;
       color: #00376b;

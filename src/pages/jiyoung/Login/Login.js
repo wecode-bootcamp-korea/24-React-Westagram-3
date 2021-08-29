@@ -1,6 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import '../Login/Login.scss';
+import './Login.scss';
 
 class Login extends React.Component {
   constructor() {
@@ -11,92 +10,59 @@ class Login extends React.Component {
     };
   }
 
-  handleEmailInput = event => {
+  handleInput = event => {
+    const { name, value } = event.target;
     this.setState({
-      email: event.target.value,
-    });
-  };
-
-  handlePwInput = event => {
-    this.setState({
-      password: event.target.value,
+      [name]: value,
     });
   };
 
   handleSignUp = () => {
     this.props.history.push('./main-jiyoung');
     console.log(this.props.history);
-    // fetch('http://10.58.2.157:8000/users/login', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     name: 'jiyoung',
-    //     email: this.state.email,
-    //     password: this.state.password,
-    //     phone_number: '123-456-7890',
-    //     bio: 'jiyoung_bio',
-    //   }),
-    // })
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     console.log('결과: ', res);
-    //     this.setState({
-    //       commentList: res,
-    //     });
-    //
-    // if (res.token) {
-    //   localStorage.setItem('token', res.token);
-    //   this.props.history.push('/main-jiyoung');
-    // } else {
-    //   alert('아이디, 비밀번호 다시 입력해주세요.');
-    // }
-    //
-    //  });
   };
 
   render() {
     const { email, password } = this.state;
+    const condition = email.includes('@') && password.length >= 5;
     return (
-      <div className="LoginJiyoung">
-        <div className="container">
-          <h1 lang="en">westagram</h1>
-          <div className="login-container">
-            <form action="" method="post" className="login-form">
+      <div className="loginJiyoung">
+        <main className="container">
+          <h1>westagram</h1>
+          <div className="loginContainer">
+            <form action="" method="post" className="loginForm">
               <input
-                onChange={this.handleEmailInput}
+                onChange={this.handleInut}
                 type="text"
-                className="user-account"
+                name="email"
+                className="userAccount"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 required
               />
               <input
-                onChange={this.handlePwInput}
+                onChange={this.handleInput}
                 type="password"
-                className="user-pw"
+                name="password"
+                className="userPw"
                 placeholder="비밀번호(최소 5자 이상)"
                 required
               />
             </form>
             <button
               onClick={this.handleSignUp}
-              className={
-                email.includes('@') && password.length >= 5
-                  ? 'login-btn active'
-                  : 'login-btn'
-              }
-              disabled={
-                email.includes('@') && password.length >= 5 ? false : true
-              }
+              className={`loginBtn ${condition && 'active'}`}
+              disabled={condition ? false : true}
             >
               로그인
             </button>
           </div>
-          <a href="#!" className="find-pw">
+          <a href="#!" className="findPw">
             비밀번호를 잊으셨나요?
           </a>
-        </div>
+        </main>
       </div>
     );
   }
 }
 
-export default withRouter(Login);
+export default Login;

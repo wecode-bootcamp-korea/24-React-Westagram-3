@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Comment from './components/Comment';
 import Nav from '../../../components/Nav/Nav';
 import './Main.scss';
 
@@ -36,23 +37,21 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div className="MainJiyoung">
+      <div className="mainJiyoung">
         <Nav />
         <main>
           <section className="contents">
             <article>
-              <div className="feed-writer-header">
-                <div className="feed-writer">
+              <div className="feedWriterHeader">
+                <div className="feedWriter">
                   <img
                     alt="writer"
                     src="./images/jiyoung/writer.jpg"
-                    className="profile profile-img"
+                    className="profileImg"
                   />
-                  <span lang="en" className="writer-id">
-                    kitty_bunny_pony
-                  </span>
+                  <span className="writerId">kitty_bunny_pony</span>
                 </div>
-                <button type="button" className="menu-btn">
+                <button type="button" className="menuBtn">
                   <img
                     alt="menu"
                     src="./images/jiyoung/menu.png"
@@ -60,31 +59,31 @@ class Main extends React.Component {
                   />
                 </button>
               </div>
-              <div className="feed-img">
+              <div className="feedImg">
                 <img
                   alt="feed"
                   src="./images/jiyoung/feed-image.jpg"
-                  className="feed-img"
+                  className="feedImg"
                 />
               </div>
-              <div className="feed-info">
-                <div className="feed-btns">
-                  <div className="feed-handle-btns">
-                    <button type="button" className="feed-btn">
+              <div className="feedInfo">
+                <div className="feedBtns">
+                  <div className="feedHandleBtns">
+                    <button type="button" className="feedBtn">
                       <img
                         alt="like"
                         src="./images/jiyoung/like.png"
                         className="icon"
                       />
                     </button>
-                    <button type="button" className="feed-btn">
+                    <button type="button" className="feedBtn">
                       <img
                         alt="comment"
                         src="./images/jiyoung/chat.png"
                         className="icon"
                       />
                     </button>
-                    <button type="button" className="feed-btn">
+                    <button type="button" className="feedBtn">
                       <img
                         alt="export"
                         src="./images/jiyoung/export.png"
@@ -92,7 +91,7 @@ class Main extends React.Component {
                       />
                     </button>
                   </div>
-                  <button type="button" className="feed-btn bookmard-btn">
+                  <button type="button" className="feedBtn bookmarkBtn">
                     <img
                       alt="bookmark"
                       src="./images/jiyoung/bookmark-white.png"
@@ -100,112 +99,106 @@ class Main extends React.Component {
                     />
                   </button>
                 </div>
-                <div className="feed-container">
-                  <div className="feed-likers">
-                    <div className="first-liker">
+                <div className="feedContainer">
+                  <div className="feedLikers">
+                    <div className="firstLiker">
                       <Link to="#!">
                         <img
-                          alt="add-liker"
+                          alt="liker"
                           src="./images/jiyoung/liker.jpg"
-                          className="profile profile-img"
+                          className="profileImg"
                         />
                       </Link>
                       <p>
-                        <span lang="en" className="user-id">
-                          cutiebbojjak
-                        </span>
-                        님 <span className="likers">외 100명</span>이 좋아합니다
+                        <span className="userId">cutiebbojjak</span>님{' '}
+                        <span className="likers">외 100명</span>이 좋아합니다
                       </p>
                     </div>
-                    <div className="writer-comment">
-                      <span className="user-id">kitty_bunny_pony</span>
+                    <div className="writerComment">
+                      <span className="userId">kitty_bunny_pony</span>
                       <span>여기가 핫플이라매! 웅성웅성... </span>
                       <span>더 보기</span>
                     </div>
                   </div>
-                  <div className="comments-container">
+                  <div className="commentsContainer">
                     <ul className="comments">
                       <li className="comment">
-                        <span className="commenter user-id">crushbOgOpa</span>
+                        <span className="commenter userId">crushbOgOpa</span>
                         <span>언제 제대하는거야.. 그날만을 기다려😪</span>
-                        <button type="button" className="delete-btn">
+                        <button type="button" className="deleteBtn">
                           <img
-                            alt="delete-btn"
+                            alt="deleteBtn"
                             src="./images/jiyoung/cancel.png"
-                            className="delete-icon"
+                            className="deleteIcon"
                           />
                         </button>
                       </li>
                       {this.state.comment.map(content => {
                         return (
                           <li className="comment">
-                            <span className="commenter user-id">yOungly</span>
+                            <span className="commenter userId">yOungly</span>
                             {content}
-                            <button type="button" className="delete-btn">
+                            <button type="button" className="deleteBtn">
                               <img
-                                alt="delete-btn"
+                                alt="deleteBtn"
                                 src="./images/jiyoung/cancel.png"
-                                className="delete-icon"
+                                className="deleteIcon"
                               />
                             </button>
                           </li>
                         );
                       })}
                     </ul>
-                    <p className="upload-time">11분 전</p>
+                    <p className="uploadTime">11분 전</p>
                   </div>
                 </div>
               </div>
-              <div className="new-comment">
+              <div className="newComment">
                 <input
                   type="text"
                   placeholder="댓글 달기..."
                   onKeyDown={this.keyDownEnter}
                   onChange={this.getInputValue}
                 />
-                <button
-                  type="submit"
-                  className="upload-btn"
-                  onClick={this.uploadComment}
-                >
+                <span className="uploadBtn" onClick={this.uploadComment}>
                   게시
-                </button>
+                </span>
               </div>
             </article>
           </section>
           <aside>
-            <div className="my-profile">
+            <div className="myProfile">
               <Link to="#!">
                 <img
                   alt="profile"
                   src="./images/jiyoung/my-profile.jpg"
-                  className="profile"
+                  className="myProfileImg"
                 />
               </Link>
-              <div className="user-name">
-                <div className="profile-info user-id">dangDaeng2</div>
-                <div className="user-nickname">Wecode | 위코드멍멍</div>
+              <div className="userName">
+                <div className="profile-info userId">dangDaeng2</div>
+                <div className="userNickname">Wecode | 위코드멍멍</div>
               </div>
             </div>
-            <div className="follower-stories">
-              <div className="story-header">
-                <div className="story-title">스토리</div>
-                <Link to="#!" target="_blank" className="view-all">
+            <div className="followerStories">
+              <div className="storyHeader">
+                <div className="storyTitle">스토리</div>
+                <Link to="#!" target="_blank" className="viewAll">
                   모두 보기
                 </Link>
               </div>
-              <div className="story-list">
+              <div className="listContainer">
                 <div className="story">
                   <Link to="#!">
                     <img
                       alt="follower"
                       src="./images/jiyoung/profile2.jpg"
-                      className="profile profile-img"
+                      className="profileImg"
                     />
                   </Link>
                   <div className="follower-info">
-                    <span className="user-id">mungmung</span>
-                    <span className="upload-time">23분 전</span>
+                    <span className="userId">mungmung</span>
+                    <span className="uploadTime">23분 전</span>
                   </div>
                 </div>
                 <div className="story">
@@ -213,60 +206,60 @@ class Main extends React.Component {
                     <img
                       alt="follower"
                       src="./images/jiyoung/profile3.jpg"
-                      className="profile profile-img"
+                      className="profile profileImg"
                     />
                   </Link>
                   <div className="follower-info">
-                    <span className="user-id">heyUrman</span>
-                    <span className="upload-time">1시간 전</span>
+                    <span className="userId">heyUrman</span>
+                    <span className="uploadTime">1시간 전</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="following-rec">
-              <div className="following-rec-header">
-                <div className="following-rec-title">회원님을 위한 추천</div>
-                <Link to="#!" target="_blank" className="view-all">
+            <div className="followingRec">
+              <div className="followingRecHeader">
+                <div className="followingRecTitle">회원님을 위한 추천</div>
+                <Link to="#!" target="_blank" className="viewAll">
                   모두 보기
                 </Link>
               </div>
-              <div className="following-list">
+              <div className="listContainer">
                 <div className="following">
                   <Link to="#!">
                     <img
                       alt="following"
                       src="./images/jiyoung/profile4.jpg"
-                      className="profile profile-img"
+                      className="profileImg"
                     />
                   </Link>
-                  <div className="following-info">
-                    <span className="user-id">Uyahooops</span>
-                    <span className="rec-users">
+                  <div className="followingInfo">
+                    <span className="userId">Uyahooops</span>
+                    <span className="recUsers">
                       youngBi님 외 5명이 추천합니다
                     </span>
                   </div>
-                  <button className="follow-btn">팔로우</button>
+                  <button className="followBtn">팔로우</button>
                 </div>
                 <div className="following">
                   <Link to="#!">
                     <img
                       alt="following"
                       src="./images/jiyoung/profile5.jpg"
-                      className="profile profile-img"
+                      className="profileImg"
                     />
                   </Link>
-                  <div className="following-info">
-                    <span className="user-id">yOungK_bbi</span>
-                    <span className="rec-users">
+                  <div className="followingInfo">
+                    <span className="userId">yOungK_bbi</span>
+                    <span className="recUsers">
                       himDleda님 외 37명이 추천합니다
                     </span>
                   </div>
-                  <button className="follow-btn">팔로우</button>
+                  <button className="followBtn">팔로우</button>
                 </div>
               </div>
             </div>
-            <div className="westagram-info">
-              <div className="westagram-link">
+            <div className="westagramInfo">
+              <div className="westagramLink">
                 <ul>
                   <li>
                     <Link to="#!">Westagram 정보</Link>·
