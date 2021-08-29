@@ -1,0 +1,370 @@
+$secondary-color: #8e8e8e;
+$accent-color: #2a93fc;
+$border-color: #ededed;
+$background-color: #fafafa;
+$content-background-color: #ffffff;
+
+.mainJiyoung {
+  font-family: 'Hahmlet', serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+
+  main {
+    display: flex;
+    justify-content: center;
+    padding: 60px 50px;
+    background-color: $background-color;
+    scroll-snap-type: y mandatory;
+
+    section {
+      article {
+        scroll-snap-align: center;
+        margin: 0 20px 20px 0;
+        background-color: $content-background-color;
+        border: 1px solid $border-color;
+
+        .feedWriterHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+
+          .feedWriter {
+            display: flex;
+            align-items: center;
+
+            .profileImg {
+              width: 30px;
+              height: 30px;
+              margin-right: 10px;
+              border: 1px solid $border-color;
+              border-radius: 50%;
+            }
+
+            .writerId {
+              font-weight: 600;
+            }
+          }
+
+          .menuBtn {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+
+            .icon {
+              width: 23px;
+              height: 23px;
+              opacity: 0.8;
+            }
+          }
+        }
+
+        .feedImg {
+          width: 450px;
+          height: 500px;
+          opacity: 1;
+        }
+        .feedInfo {
+          .feedBtns {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+
+            .feedHandleBtns {
+              .feedBtn {
+                padding: 0;
+                background-color: transparent;
+                border: none;
+
+                .icon {
+                  width: 23px;
+                  height: 23px;
+                  margin-right: 10px;
+                  opacity: 0.8;
+                }
+              }
+            }
+
+            .bookmarkBtn {
+              padding: 0;
+              background-color: transparent;
+              border: none;
+
+              .icon {
+                width: 23px;
+                height: 23px;
+                opacity: 0.8;
+              }
+            }
+          }
+
+          .feedContainer {
+            display: flex;
+            flex-direction: column;
+            padding-top: 0;
+            border-bottom: 1px solid $border-color;
+
+            .feedLikers {
+              display: flex;
+              flex-direction: column;
+              padding: 10px 10px 0 10px;
+
+              .firstLiker {
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+
+                .profileImg {
+                  width: 30px;
+                  height: 30px;
+                  margin-right: 10px;
+                  border: 1px solid $border-color;
+                  border-radius: 50%;
+                }
+
+                .likers {
+                  font-weight: 600;
+                }
+              }
+
+              .writerComment {
+                .userId {
+                  margin-right: 3px;
+                  font-weight: 600;
+                }
+              }
+            }
+
+            .commentsContainer {
+              display: flex;
+              flex-direction: column;
+              padding: 5px 10px 10px 10px;
+
+              .comments {
+                .comment {
+                  position: relative;
+                  display: flex;
+                  margin-bottom: 5px;
+
+                  .userId {
+                    margin-right: 3px;
+                    font-weight: 600;
+                  }
+
+                  .deleteBtn {
+                    position: absolute;
+                    right: 5px;
+                    padding: 0;
+                    background-color: transparent;
+                    border: none;
+
+                    .deleteIcon {
+                      width: 10px;
+                      height: 10px;
+                      color: $secondary-color;
+                    }
+                  }
+                }
+              }
+
+              .uploadTime {
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+        .newComment {
+          padding: 10px;
+
+          input {
+            width: 370px;
+            margin-right: 30px;
+            border: none;
+            outline: none;
+          }
+
+          .uploadBtn {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            color: $accent-color;
+            opacity: 0.5;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    aside {
+      position: sticky;
+      top: 90px;
+      width: 250px;
+      height: 420px;
+
+      .myProfile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .myProfileImg {
+          width: 50px;
+          height: 50px;
+          margin-right: 10px;
+          border: 1px solid $border-color;
+          border-radius: 50%;
+        }
+
+        .userName {
+          .userId {
+            margin-bottom: 3px;
+          }
+
+          .userNickname {
+            color: $secondary-color;
+          }
+        }
+      }
+
+      .followerStories {
+        margin-bottom: 10px;
+        background-color: $content-background-color;
+        border: 1px solid $border-color;
+
+        .storyHeader {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+
+          .viewAll {
+            font-weight: 600;
+          }
+        }
+
+        .listContainer {
+          display: flex;
+          flex-direction: column;
+          padding: 0 8px;
+
+          .story {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+
+            .profileImg {
+              width: 30px;
+              height: 30px;
+              margin-right: 10px;
+              border: 1px solid $border-color;
+              border-radius: 50%;
+            }
+
+            .follower-info {
+              display: flex;
+              flex-direction: column;
+
+              .userId {
+                margin-bottom: 5px;
+              }
+
+              .uploadTime {
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+      }
+
+      .followingRec {
+        margin-bottom: 10px;
+        background-color: $content-background-color;
+        border: 1px solid $border-color;
+
+        .followingRecHeader {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+
+          .viewAll {
+            font-weight: 600;
+          }
+        }
+
+        .listContainer {
+          display: flex;
+          flex-direction: column;
+          padding: 0 8px;
+
+          .following {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+
+            .profileImg {
+              width: 30px;
+              height: 30px;
+              margin-right: 10px;
+              border: 1px solid $border-color;
+              border-radius: 50%;
+            }
+
+            .followingInfo {
+              display: flex;
+              flex-direction: column;
+
+              .userId {
+                margin-bottom: 5px;
+              }
+
+              .recUsers {
+                display: inline-block;
+                width: 110px;
+                white-space: nowrap;
+                color: $secondary-color;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+
+            .followBtn {
+              width: 60px;
+              height: 30px;
+              margin-left: 10px;
+              color: $accent-color;
+              background-color: #ffffff;
+              border: none;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      .westagramInfo {
+        .westagramLink {
+          margin-bottom: 10px;
+
+          ul {
+            margin-bottom: 10px;
+
+            li {
+              display: inline-block;
+              margin: 0 3px 3px 0;
+
+              a {
+                margin-right: 3px;
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+
+        .copyright {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
